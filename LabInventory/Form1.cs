@@ -36,10 +36,8 @@ namespace LabInventory
        private string getLogins(String _name)
         {
             //Function for getting data from the database
-
-            String user_name = "\"" + _name + "\"";
                        connection.Open();
-                       String queryString = "SELECT * FROM LoginCredentials WHERE Name = " + user_name + "";
+                       String queryString = "SELECT * FROM LoginCredentials WHERE Name = '" + _name + "'";
                        cmd = new SqlCommand(queryString, connection);
                        reader = cmd.ExecuteReader();
                        reader.Read();
@@ -47,8 +45,7 @@ namespace LabInventory
 
                         try
                         {
-                            _data = "" + reader[0].ToString();
-                            MessageBox.Show(_data);
+                            _data = "" + reader[1].ToString();
                         }
                         catch (Exception e)
                         {
