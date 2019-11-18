@@ -48,7 +48,7 @@ namespace LabInventory
             }
             catch (Exception e)
             {
-                // MessageBox.Show(e.Message);
+                throw e;
             }
             connection.Close();
             return _data;
