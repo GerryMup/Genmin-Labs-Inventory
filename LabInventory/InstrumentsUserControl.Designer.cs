@@ -31,7 +31,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.MultimetersButton = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.ClampMetersButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -79,18 +79,19 @@
             this.button7.Text = "Strobo Scopes";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // ClampMetersButton
             // 
-            this.button6.BackColor = System.Drawing.Color.LightBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button6.Location = new System.Drawing.Point(704, 72);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(204, 102);
-            this.button6.TabIndex = 23;
-            this.button6.Text = "Clamp Meters";
-            this.button6.UseVisualStyleBackColor = false;
+            this.ClampMetersButton.BackColor = System.Drawing.Color.LightBlue;
+            this.ClampMetersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClampMetersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClampMetersButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.ClampMetersButton.Location = new System.Drawing.Point(704, 72);
+            this.ClampMetersButton.Name = "ClampMetersButton";
+            this.ClampMetersButton.Size = new System.Drawing.Size(204, 102);
+            this.ClampMetersButton.TabIndex = 23;
+            this.ClampMetersButton.Text = "Clamp Meters";
+            this.ClampMetersButton.UseVisualStyleBackColor = false;
+            this.ClampMetersButton.Click += new System.EventHandler(this.ClampMetersButton_Click_1);
             // 
             // button5
             // 
@@ -165,7 +166,7 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.MultimetersButton);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.ClampMetersButton);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -184,7 +185,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button MultimetersButton;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button ClampMetersButton;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;

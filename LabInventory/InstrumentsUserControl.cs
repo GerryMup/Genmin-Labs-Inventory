@@ -104,5 +104,16 @@ namespace LabInventory
             }
             InstrumentsUserControl.Instance.Controls["MultimetersUserControl"].BringToFront();
         }
+
+        private void ClampMetersButton_Click_1(object sender, EventArgs e)
+        {
+            if (!ToolsUserControl.Instance.Controls.ContainsKey("ClampMetersUserControl"))
+            {
+                ClampMetersUserControl _powerTools = new ClampMetersUserControl();
+                _powerTools.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_powerTools);
+            }
+            InstrumentsUserControl.Instance.Controls["MultimetersUserControl"].BringToFront();
+        }
     }
 }

@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClampMetersUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClampMetersUserControl.Designer.cs">
+      <DependentUpon>ClampMetersUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ElectronicToolsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <Compile Include="WorkshopUserControl.Designer.cs">
       <DependentUpon>WorkshopUserControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClampMetersUserControl.resx">
+      <DependentUpon>ClampMetersUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ElectronicToolsUserControl.resx">
       <DependentUpon>ElectronicToolsUserControl.cs</DependentUpon>
     </EmbeddedResource>
