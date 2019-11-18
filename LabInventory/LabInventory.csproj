@@ -91,6 +91,12 @@
     <Compile Include="Main Menu.Designer.cs">
       <DependentUpon>Main Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MultimetersUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MultimetersUserControl.Designer.cs">
+      <DependentUpon>MultimetersUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="OscilloscopesUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Menu.resx">
       <DependentUpon>Main Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultimetersUserControl.resx">
+      <DependentUpon>MultimetersUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OscilloscopesUserControl.resx">
       <DependentUpon>OscilloscopesUserControl.cs</DependentUpon>

@@ -85,13 +85,24 @@ namespace LabInventory
 
         private void OscilloscopesButton_Click_1(object sender, EventArgs e)
         {
-            if (!ToolsUserControl.Instance.Controls.ContainsKey("PowerToolsUserControl"))
+            if (!ToolsUserControl.Instance.Controls.ContainsKey("OscilloscopesUserControl"))
             {
                 OscilloscopesUserControl _powerTools = new OscilloscopesUserControl();
                 _powerTools.Dock = DockStyle.Fill;
                 InstrumentsUserControl.Instance.Controls.Add(_powerTools);
             }
             InstrumentsUserControl.Instance.Controls["OscilloscopesUserControl"].BringToFront();
+        }
+
+        private void MultimetersButton_Click_1(object sender, EventArgs e)
+        {
+            if (!ToolsUserControl.Instance.Controls.ContainsKey("MultimetersUserControl"))
+            {
+                MultimetersUserControl _powerTools = new MultimetersUserControl();
+                _powerTools.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_powerTools);
+            }
+            InstrumentsUserControl.Instance.Controls["MultimetersUserControl"].BringToFront();
         }
     }
 }

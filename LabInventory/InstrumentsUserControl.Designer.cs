@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.MultimetersButton = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -52,18 +52,19 @@
             this.button9.Text = "Instruments";
             this.button9.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // MultimetersButton
             // 
-            this.button8.BackColor = System.Drawing.Color.LightBlue;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button8.Location = new System.Drawing.Point(396, 72);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(198, 102);
-            this.button8.TabIndex = 25;
-            this.button8.Text = "Multimeters";
-            this.button8.UseVisualStyleBackColor = false;
+            this.MultimetersButton.BackColor = System.Drawing.Color.LightBlue;
+            this.MultimetersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MultimetersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MultimetersButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.MultimetersButton.Location = new System.Drawing.Point(396, 72);
+            this.MultimetersButton.Name = "MultimetersButton";
+            this.MultimetersButton.Size = new System.Drawing.Size(198, 102);
+            this.MultimetersButton.TabIndex = 25;
+            this.MultimetersButton.Text = "Multimeters";
+            this.MultimetersButton.UseVisualStyleBackColor = false;
+            this.MultimetersButton.Click += new System.EventHandler(this.MultimetersButton_Click_1);
             // 
             // button7
             // 
@@ -162,7 +163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.MultimetersButton);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -181,7 +182,7 @@
         #endregion
 
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button MultimetersButton;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
