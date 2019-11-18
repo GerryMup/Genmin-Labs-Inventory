@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElectronicToolsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElectronicToolsUserControl.Designer.cs">
+      <DependentUpon>ElectronicToolsUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="EquipmentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="WorkshopUserControl.Designer.cs">
       <DependentUpon>WorkshopUserControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ElectronicToolsUserControl.resx">
+      <DependentUpon>ElectronicToolsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EquipmentUserControl.resx">
       <DependentUpon>EquipmentUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,13 +165,6 @@
     <Content Include="Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Lab Inventory.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Lab Inventory_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Lab Inventory.mdf</DependentUpon>
     </Content>
     <None Include="Resources\LoginBackground.png" />
     <None Include="Resources\WitsEIE.jpg" />

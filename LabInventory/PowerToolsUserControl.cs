@@ -36,7 +36,7 @@ namespace LabInventory
         }
 
         //Make a connection to the SQL Database
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf; Integrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"|DataDirectory|\\Database1.mdf\";Integrated Security=True");
 
         private void PowerToolsUserControl_Load(object sender, EventArgs e)
         {
@@ -100,30 +100,34 @@ namespace LabInventory
             }
             else
             {
+                MessageBox.Show("Now Attempting to Add");
+                SqlCommand cmd = new SqlCommand("AddPowerTools_Procedure", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@WNumber", WNumberField.Text);
+                cmd.Parameters.AddWithValue("@Manufacturer", ManufacturerField.Text);
+                cmd.Parameters.AddWithValue("@Condition", ConditionField.Text);
+                cmd.Parameters.AddWithValue("@Description", DescriptionField.Text);
+                cmd.Parameters.AddWithValue("@Available", AvailableField.Text);
+                cmd.Parameters.AddWithValue("@Location", LocationField.Text);
                 try
                 {
-                    MessageBox.Show("Now Attempting to Add");
-                    SqlCommand cmd = new SqlCommand("AddPowerTools_Procedure", connection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@WNumber", WNumberField.Text);
-                    cmd.Parameters.AddWithValue("@Manufacturer", ManufacturerField.Text);
-                    cmd.Parameters.AddWithValue("@Condition", ConditionField.Text);
-                    cmd.Parameters.AddWithValue("@Description", DescriptionField.Text);
-                    cmd.Parameters.AddWithValue("@Available", AvailableField.Text);
-                    cmd.Parameters.AddWithValue("@Location", LocationField.Text);
-
-                    connection.Open();
+                    cmd.Connection.Open();
                     cmd.ExecuteNonQuery();
-                    connection.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Invalid SQL Operation: " + ex);
                 }
-               
+                finally
+                {
+                    cmd.Connection.Close();
+                }
             }
             refresh_dataGridView(); // Refresh the viewed data after you finish adding an item
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         }
 
         private void button2_Click(object sender, EventArgs e)
