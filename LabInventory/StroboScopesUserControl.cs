@@ -10,41 +10,37 @@ using System.Windows.Forms;
 
 namespace LabInventory
 {
-    public partial class CurrentSensorsUserControl : UserControl
+    public partial class StroboScopesUserControl : UserControl
     {
-        private static CurrentSensorsUserControl _instance;
 
-        public static CurrentSensorsUserControl Instance
+        private static StroboScopesUserControl _instance;
+
+        public static StroboScopesUserControl Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new CurrentSensorsUserControl();
+                    _instance = new StroboScopesUserControl();
                 }
                 return _instance;
             }
         }
 
-        public CurrentSensorsUserControl()
+        public StroboScopesUserControl()
         {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            if (!CurrentSensorsUserControl.Instance.Controls.ContainsKey("InstrumentsUserControl"))
+            if (!StroboScopesUserControl.Instance.Controls.ContainsKey("InstrumentsUserControl"))
             {
                 InstrumentsUserControl _tools = new InstrumentsUserControl();
                 _tools.Dock = DockStyle.Fill;
                 InstrumentsUserControl.Instance.Controls.Add(_tools);
             }
             InstrumentsUserControl.Instance.Controls["InstrumentsUserControl"].BringToFront();
-        }
-
-        private void CurrentSensorsUserControl_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

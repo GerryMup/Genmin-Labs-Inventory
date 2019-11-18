@@ -30,7 +30,7 @@
         {
             this.button9 = new System.Windows.Forms.Button();
             this.MultimetersButton = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.StroboScopesButton = new System.Windows.Forms.Button();
             this.ClampMetersButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.CurrentSensorsButton = new System.Windows.Forms.Button();
@@ -66,18 +66,19 @@
             this.MultimetersButton.UseVisualStyleBackColor = false;
             this.MultimetersButton.Click += new System.EventHandler(this.MultimetersButton_Click_1);
             // 
-            // button7
+            // StroboScopesButton
             // 
-            this.button7.BackColor = System.Drawing.Color.LightBlue;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button7.Location = new System.Drawing.Point(704, 232);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(204, 103);
-            this.button7.TabIndex = 24;
-            this.button7.Text = "Strobo Scopes";
-            this.button7.UseVisualStyleBackColor = false;
+            this.StroboScopesButton.BackColor = System.Drawing.Color.LightBlue;
+            this.StroboScopesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StroboScopesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StroboScopesButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.StroboScopesButton.Location = new System.Drawing.Point(396, 232);
+            this.StroboScopesButton.Name = "StroboScopesButton";
+            this.StroboScopesButton.Size = new System.Drawing.Size(204, 103);
+            this.StroboScopesButton.TabIndex = 24;
+            this.StroboScopesButton.Text = "Strobo Scopes";
+            this.StroboScopesButton.UseVisualStyleBackColor = false;
+            this.StroboScopesButton.Click += new System.EventHandler(this.StroboScopesButton_Click);
             // 
             // ClampMetersButton
             // 
@@ -139,7 +140,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button2.Location = new System.Drawing.Point(396, 232);
+            this.button2.Location = new System.Drawing.Point(704, 232);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(198, 103);
             this.button2.TabIndex = 19;
@@ -166,7 +167,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button9);
             this.Controls.Add(this.MultimetersButton);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.StroboScopesButton);
             this.Controls.Add(this.ClampMetersButton);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.CurrentSensorsButton);
@@ -185,7 +186,7 @@
 
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button MultimetersButton;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button StroboScopesButton;
         private System.Windows.Forms.Button ClampMetersButton;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button CurrentSensorsButton;

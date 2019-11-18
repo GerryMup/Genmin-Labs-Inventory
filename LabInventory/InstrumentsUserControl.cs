@@ -128,5 +128,16 @@ namespace LabInventory
             }
             InstrumentsUserControl.Instance.Controls["CurrentSensorsUserControl"].BringToFront();
         }
+
+        private void StroboScopesButton_Click(object sender, EventArgs e)
+        {
+            if (!ToolsUserControl.Instance.Controls.ContainsKey("StroboScopesUserControl"))
+            {
+                StroboScopesUserControl _powerTools = new StroboScopesUserControl();
+                _powerTools.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_powerTools);
+            }
+            InstrumentsUserControl.Instance.Controls["StroboScopesUserControl"].BringToFront();
+        }
     }
 }
