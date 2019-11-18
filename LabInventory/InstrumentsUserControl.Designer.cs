@@ -36,7 +36,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.OscilloscopesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button9
@@ -143,18 +143,19 @@
             this.button2.Text = "Thermometers";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // OscilloscopesButton
             // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(93, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 102);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Oscilloscopes";
-            this.button1.UseVisualStyleBackColor = false;
+            this.OscilloscopesButton.BackColor = System.Drawing.Color.LightBlue;
+            this.OscilloscopesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OscilloscopesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OscilloscopesButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.OscilloscopesButton.Location = new System.Drawing.Point(93, 72);
+            this.OscilloscopesButton.Name = "OscilloscopesButton";
+            this.OscilloscopesButton.Size = new System.Drawing.Size(202, 102);
+            this.OscilloscopesButton.TabIndex = 18;
+            this.OscilloscopesButton.Text = "Oscilloscopes";
+            this.OscilloscopesButton.UseVisualStyleBackColor = false;
+            this.OscilloscopesButton.Click += new System.EventHandler(this.OscilloscopesButton_Click_1);
             // 
             // InstrumentsUserControl
             // 
@@ -168,7 +169,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.OscilloscopesButton);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "InstrumentsUserControl";
             this.Size = new System.Drawing.Size(1000, 569);
@@ -187,6 +188,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button OscilloscopesButton;
     }
 }
