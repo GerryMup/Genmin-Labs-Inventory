@@ -56,7 +56,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(572, 162);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 0;
@@ -69,7 +69,7 @@
             this.PowerToolsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PowerToolsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PowerToolsGrid.Location = new System.Drawing.Point(47, 113);
-            this.PowerToolsGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PowerToolsGrid.Margin = new System.Windows.Forms.Padding(4);
             this.PowerToolsGrid.Name = "PowerToolsGrid";
             this.PowerToolsGrid.Size = new System.Drawing.Size(901, 244);
             this.PowerToolsGrid.TabIndex = 7;
@@ -78,22 +78,23 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(331, 74);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(266, 27);
             this.textBox1.TabIndex = 8;
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.LightBlue;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(331, 22);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(407, 44);
             this.button5.TabIndex = 9;
             this.button5.Text = "Power Tools";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // WNumberField
             // 
@@ -366,7 +367,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PowerToolsUserControl";
             this.Size = new System.Drawing.Size(1000, 569);
             this.Load += new System.EventHandler(this.PowerToolsUserControl_Load);
