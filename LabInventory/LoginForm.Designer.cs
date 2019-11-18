@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.LoginButton = new System.Windows.Forms.Button();
             this.UsernameField = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.PasswordField = new System.Windows.Forms.TextBox();
             this.username = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.Label();
@@ -58,11 +55,6 @@
             this.UsernameField.Name = "UsernameField";
             this.UsernameField.Size = new System.Drawing.Size(182, 23);
             this.UsernameField.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // PasswordField
             // 
@@ -123,7 +115,7 @@
             // LoginForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::LabInventory.Properties.Resources.LoginBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(709, 498);
             this.Controls.Add(this.IncorrectCredentials);
@@ -145,7 +137,6 @@
 
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.TextBox UsernameField;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox PasswordField;
         private System.Windows.Forms.Label username;
         private System.Windows.Forms.Label password;
