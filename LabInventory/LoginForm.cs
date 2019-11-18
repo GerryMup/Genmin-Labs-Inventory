@@ -42,7 +42,6 @@ namespace LabInventory
             reader = cmd.ExecuteReader();
             reader.Read();
             string _data = "";
-
             try
             {
                 _data = "" + reader[1].ToString();
@@ -51,7 +50,6 @@ namespace LabInventory
             {
                 // MessageBox.Show(e.Message);
             }
-
             connection.Close();
             return _data;
         }
@@ -68,7 +66,10 @@ namespace LabInventory
                 //You may login
                 //Hide the incorrect credentials message box
                 IncorrectCredentials.Hide();
-                MessageBox.Show("Login Successful");
+                //Create and show the main menu when login is successful
+                Main_Menu _mainMenu = new Main_Menu();
+                this.Hide();
+                _mainMenu.Show();
             }
             else
             {
