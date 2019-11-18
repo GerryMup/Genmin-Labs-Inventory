@@ -67,6 +67,12 @@
     <Compile Include="ClampMetersUserControl.Designer.cs">
       <DependentUpon>ClampMetersUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentSensorsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CurrentSensorsUserControl.Designer.cs">
+      <DependentUpon>CurrentSensorsUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ElectronicToolsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="ClampMetersUserControl.resx">
       <DependentUpon>ClampMetersUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentSensorsUserControl.resx">
+      <DependentUpon>CurrentSensorsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ElectronicToolsUserControl.resx">
       <DependentUpon>ElectronicToolsUserControl.cs</DependentUpon>

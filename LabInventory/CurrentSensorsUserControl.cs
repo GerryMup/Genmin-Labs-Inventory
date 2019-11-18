@@ -10,43 +10,36 @@ using System.Windows.Forms;
 
 namespace LabInventory
 {
-    public partial class ClampMetersUserControl : UserControl
+    public partial class CurrentSensorsUserControl : UserControl
     {
+        private static CurrentSensorsUserControl _instance;
 
-        private static ClampMetersUserControl _instance;
-
-        public static ClampMetersUserControl Instance
+        public static CurrentSensorsUserControl Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new ClampMetersUserControl();
+                    _instance = new CurrentSensorsUserControl();
                 }
                 return _instance;
             }
         }
-        
-        //Initialize 
-        public ClampMetersUserControl()
+
+        public CurrentSensorsUserControl()
         {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            if (!ClampMetersUserControl.Instance.Controls.ContainsKey("InstrumentsUserControl"))
+            if (!CurrentSensorsUserControl.Instance.Controls.ContainsKey("InstrumentsUserControl"))
             {
                 InstrumentsUserControl _tools = new InstrumentsUserControl();
                 _tools.Dock = DockStyle.Fill;
                 InstrumentsUserControl.Instance.Controls.Add(_tools);
             }
             InstrumentsUserControl.Instance.Controls["InstrumentsUserControl"].BringToFront();
-        }
-
-        private void ClampMetersUserControl_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -82,7 +82,7 @@ namespace LabInventory
         {
 
         }
-
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
         private void OscilloscopesButton_Click_1(object sender, EventArgs e)
         {
             if (!ToolsUserControl.Instance.Controls.ContainsKey("OscilloscopesUserControl"))
@@ -94,6 +94,7 @@ namespace LabInventory
             InstrumentsUserControl.Instance.Controls["OscilloscopesUserControl"].BringToFront();
         }
 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void MultimetersButton_Click_1(object sender, EventArgs e)
         {
             if (!ToolsUserControl.Instance.Controls.ContainsKey("MultimetersUserControl"))
@@ -105,6 +106,7 @@ namespace LabInventory
             InstrumentsUserControl.Instance.Controls["MultimetersUserControl"].BringToFront();
         }
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void ClampMetersButton_Click_1(object sender, EventArgs e)
         {
             if (!ToolsUserControl.Instance.Controls.ContainsKey("ClampMetersUserControl"))
@@ -113,7 +115,18 @@ namespace LabInventory
                 _powerTools.Dock = DockStyle.Fill;
                 InstrumentsUserControl.Instance.Controls.Add(_powerTools);
             }
-            InstrumentsUserControl.Instance.Controls["MultimetersUserControl"].BringToFront();
+            InstrumentsUserControl.Instance.Controls["ClampMetersUserControl"].BringToFront();
+        }
+
+        private void CurrentSensorsButton_Click(object sender, EventArgs e)
+        {
+            if (!ToolsUserControl.Instance.Controls.ContainsKey("CurrentSensorsUserControl"))
+            {
+                CurrentSensorsUserControl _powerTools = new CurrentSensorsUserControl();
+                _powerTools.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_powerTools);
+            }
+            InstrumentsUserControl.Instance.Controls["CurrentSensorsUserControl"].BringToFront();
         }
     }
 }
