@@ -1,0 +1,1 @@
+﻿Insert into PowerToolsTable (WNumber,Manufacturer,Condition,Description,Available,Location) values('W100210','Korg','New','Piano','Yes','Toms Instruments')

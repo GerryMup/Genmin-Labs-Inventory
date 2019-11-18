@@ -36,7 +36,7 @@ namespace LabInventory
         }
 
         //Make a connection to the SQL Database
-        SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"|DataDirectory|\\Database1.mdf\";Integrated Security=True");
+        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf; Integrated Security=True");
 
         private void PowerToolsUserControl_Load(object sender, EventArgs e)
         {
@@ -56,7 +56,7 @@ namespace LabInventory
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter adaptor = new SqlDataAdapter(cmd);
-                DataSet dataset = new DataSet();
+                DataSet dataset = new DataSet(); //Data set for filling in the data in the Grid View
                 adaptor.Fill(dataset);
 
                 connection.Open();
@@ -91,26 +91,38 @@ namespace LabInventory
         //Adding new power items to the database
         private void AddNewButton_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("AddPowerTools_Procedure", connection);
-            cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@WNumber",WNumberField.Text);
-            cmd.Parameters.AddWithValue("@Manufacturer", ManufacturerField.Text);
-            cmd.Parameters.AddWithValue("@Condition", ConditionField.Text);
-            cmd.Parameters.AddWithValue("@Description", DescriptionField.Text);
-            cmd.Parameters.AddWithValue("@Available", AvailableField.Text);
-            cmd.Parameters.AddWithValue("@Location", LocationField.Text);
+            //Make sure the user does not try to add items where there are empty fields
+            if ((WNumberField.Text == "") || (ManufacturerField.Text == "") || (ConditionField.Text == "") ||
+                (DescriptionField.Text == "") || (AvailableField.Text == "") || (LocationField.Text == ""))
+            {
+                MessageBox.Show("Please ensure that there are no empty fields");
+            }
+            else
+            {
+                try
+                {
+                    MessageBox.Show("Now Attempting to Add");
+                    SqlCommand cmd = new SqlCommand("AddPowerTools_Procedure", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-            connection.Open();
-            try
-            {
-                cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@WNumber", WNumberField.Text);
+                    cmd.Parameters.AddWithValue("@Manufacturer", ManufacturerField.Text);
+                    cmd.Parameters.AddWithValue("@Condition", ConditionField.Text);
+                    cmd.Parameters.AddWithValue("@Description", DescriptionField.Text);
+                    cmd.Parameters.AddWithValue("@Available", AvailableField.Text);
+                    cmd.Parameters.AddWithValue("@Location", LocationField.Text);
+
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Invalid SQL Operation: " + ex);
+                }
+               
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Invalid SQL Operation: " + ex);
-            }
-            connection.Close();
             refresh_dataGridView(); // Refresh the viewed data after you finish adding an item
         }
 
