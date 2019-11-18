@@ -16,7 +16,7 @@ namespace LabInventory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Main_Menu());
         }
     }
 }

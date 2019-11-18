@@ -61,11 +61,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EquipmentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EquipmentUserControl.Designer.cs">
+      <DependentUpon>EquipmentUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstrumentsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InstrumentsUserControl.Designer.cs">
+      <DependentUpon>InstrumentsUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Menu.Designer.cs">
+      <DependentUpon>Main Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PowerToolsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PowerToolsUserControl.Designer.cs">
+      <DependentUpon>PowerToolsUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -75,8 +99,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToolsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolsUserControl.Designer.cs">
+      <DependentUpon>ToolsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkshopUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkshopUserControl.Designer.cs">
+      <DependentUpon>WorkshopUserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EquipmentUserControl.resx">
+      <DependentUpon>EquipmentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstrumentsUserControl.resx">
+      <DependentUpon>InstrumentsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Menu.resx">
+      <DependentUpon>Main Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PowerToolsUserControl.resx">
+      <DependentUpon>PowerToolsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -89,7 +137,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ToolsUserControl.resx">
+      <DependentUpon>ToolsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkshopUserControl.resx">
+      <DependentUpon>WorkshopUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,6 +166,23 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\LoginBackground.png" />
+    <None Include="Resources\WitsEIE.jpg" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\clear.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\rightArrow.png" />
+    <None Include="Resources\leftArrow.png" />
+    <None Include="Resources\WeirdMachine.png" />
+    <None Include="Resources\Vernier.png" />
+    <None Include="Resources\Tools.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\LightBulb.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\LogOut.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
