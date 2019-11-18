@@ -33,27 +33,27 @@ namespace LabInventory
         SqlCommand cmd;
         SqlDataReader reader;
 
-        private string getLogins(String _name)
+       private string getLogins(String _name)
         {
             //Function for getting data from the database
-            connection.Open();
-            String queryString = "SELECT * FROM LoginCredentials WHERE Name = '" + _name + "'";
-            cmd = new SqlCommand(queryString, connection);
-            reader = cmd.ExecuteReader();
-            reader.Read();
-            string _data = "";
+                       connection.Open();
+                       String queryString = "SELECT * FROM LoginCredentials WHERE Name = '" + _name + "'";
+                       cmd = new SqlCommand(queryString, connection);
+                       reader = cmd.ExecuteReader();
+                       reader.Read();
+                       string _data = "";
 
-            try
-            {
-                _data = "" + reader[1].ToString();
-            }
-            catch (Exception e)
-            {
-                // MessageBox.Show(e.Message);
-            }
-
-            connection.Close();
-            return _data;
+                        try
+                        {
+                            _data = "" + reader[1].ToString();
+                        }
+                        catch (Exception e)
+                        {
+                           // MessageBox.Show(e.Message);
+                        }
+            
+                       connection.Close();
+                       return _data;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
