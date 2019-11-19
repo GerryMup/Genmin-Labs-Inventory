@@ -96,5 +96,16 @@ namespace LabInventory
             }
             EquipmentUserControl.Instance.Controls["GasTanksUserControl"].BringToFront();
         }
+
+        private void btnExtinguishers_Click(object sender, EventArgs e)
+        {
+            if (!EquipmentUserControl.Instance.Controls.ContainsKey("ExtinguiashersUserControl"))
+            {
+                ExtinguiashersUserControl _equip = new ExtinguiashersUserControl();
+                _equip.Dock = DockStyle.Fill;
+                EquipmentUserControl.Instance.Controls.Add(_equip);
+            }
+            EquipmentUserControl.Instance.Controls["ExtinguiashersUserControl"].BringToFront();
+        }
     }
 }

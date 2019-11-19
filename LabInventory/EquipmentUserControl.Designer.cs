@@ -30,7 +30,7 @@
         {
             this.button9 = new System.Windows.Forms.Button();
             this.btnSinglePhase = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnExtinguishers = new System.Windows.Forms.Button();
             this.btnThreePhase = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnGenerators = new System.Windows.Forms.Button();
@@ -66,18 +66,19 @@
             this.btnSinglePhase.UseVisualStyleBackColor = false;
             this.btnSinglePhase.Click += new System.EventHandler(this.btnSinglePhase_Click);
             // 
-            // button7
+            // btnExtinguishers
             // 
-            this.button7.BackColor = System.Drawing.Color.LightBlue;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button7.Location = new System.Drawing.Point(704, 232);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(204, 103);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "Fire Extinguishers";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnExtinguishers.BackColor = System.Drawing.Color.LightBlue;
+            this.btnExtinguishers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExtinguishers.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExtinguishers.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnExtinguishers.Location = new System.Drawing.Point(704, 232);
+            this.btnExtinguishers.Name = "btnExtinguishers";
+            this.btnExtinguishers.Size = new System.Drawing.Size(204, 103);
+            this.btnExtinguishers.TabIndex = 15;
+            this.btnExtinguishers.Text = "Fire Extinguishers";
+            this.btnExtinguishers.UseVisualStyleBackColor = false;
+            this.btnExtinguishers.Click += new System.EventHandler(this.btnExtinguishers_Click);
             // 
             // btnThreePhase
             // 
@@ -167,7 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button9);
             this.Controls.Add(this.btnSinglePhase);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnExtinguishers);
             this.Controls.Add(this.btnThreePhase);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnGenerators);
@@ -184,7 +185,7 @@
 
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnSinglePhase;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnExtinguishers;
         private System.Windows.Forms.Button btnThreePhase;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnGenerators;

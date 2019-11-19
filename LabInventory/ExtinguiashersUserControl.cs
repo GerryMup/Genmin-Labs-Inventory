@@ -10,42 +10,36 @@ using System.Windows.Forms;
 
 namespace LabInventory
 {
-    public partial class GasTanksUserControl : UserControl
+    public partial class ExtinguiashersUserControl : UserControl
     {
+        private static ExtinguiashersUserControl _instance;
 
-        private static GasTanksUserControl _instance;
-
-        public static GasTanksUserControl Instance
+        public static ExtinguiashersUserControl Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new GasTanksUserControl();
+                    _instance = new ExtinguiashersUserControl();
                 }
                 return _instance;
             }
         }
 
-        public GasTanksUserControl()
+        public ExtinguiashersUserControl()
         {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            if (!GasTanksUserControl.Instance.Controls.ContainsKey("EquipmentUserControl"))
+            if (!ExtinguiashersUserControl.Instance.Controls.ContainsKey("EquipmentUserControl"))
             {
                 EquipmentUserControl _equipment = new EquipmentUserControl();
                 _equipment.Dock = DockStyle.Fill;
                 EquipmentUserControl.Instance.Controls.Add(_equipment);
             }
             EquipmentUserControl.Instance.Controls["EquipmentUserControl"].BringToFront();
-        }
-
-        private void GasTanksUserControl_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
