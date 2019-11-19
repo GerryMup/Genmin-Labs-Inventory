@@ -173,6 +173,7 @@
             this.Controls.Add(this.PowerToolsButton);
             this.Name = "ToolsUserControl";
             this.Size = new System.Drawing.Size(1000, 569);
+            this.Load += new System.EventHandler(this.ToolsUserControl_Load);
             this.ResumeLayout(false);
 
         }

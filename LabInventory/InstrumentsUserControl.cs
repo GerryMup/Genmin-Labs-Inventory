@@ -87,9 +87,9 @@ namespace LabInventory
         {
             if (!ToolsUserControl.Instance.Controls.ContainsKey("OscilloscopesUserControl"))
             {
-                OscilloscopesUserControl _powerTools = new OscilloscopesUserControl();
-                _powerTools.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_powerTools);
+                OscilloscopesUserControl _scopes = new OscilloscopesUserControl();
+                _scopes.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_scopes);
             }
             InstrumentsUserControl.Instance.Controls["OscilloscopesUserControl"].BringToFront();
         }
@@ -99,9 +99,9 @@ namespace LabInventory
         {
             if (!ToolsUserControl.Instance.Controls.ContainsKey("MultimetersUserControl"))
             {
-                MultimetersUserControl _powerTools = new MultimetersUserControl();
-                _powerTools.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_powerTools);
+                MultimetersUserControl _multimeters = new MultimetersUserControl();
+                _multimeters.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_multimeters);
             }
             InstrumentsUserControl.Instance.Controls["MultimetersUserControl"].BringToFront();
         }
@@ -111,9 +111,9 @@ namespace LabInventory
         {
             if (!ToolsUserControl.Instance.Controls.ContainsKey("ClampMetersUserControl"))
             {
-                ClampMetersUserControl _powerTools = new ClampMetersUserControl();
-                _powerTools.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_powerTools);
+                ClampMetersUserControl _clamps = new ClampMetersUserControl();
+                _clamps.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_clamps);
             }
             InstrumentsUserControl.Instance.Controls["ClampMetersUserControl"].BringToFront();
         }
@@ -122,9 +122,9 @@ namespace LabInventory
         {
             if (!ToolsUserControl.Instance.Controls.ContainsKey("CurrentSensorsUserControl"))
             {
-                CurrentSensorsUserControl _powerTools = new CurrentSensorsUserControl();
-                _powerTools.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_powerTools);
+                CurrentSensorsUserControl _currentSensors = new CurrentSensorsUserControl();
+                _currentSensors.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_currentSensors);
             }
             InstrumentsUserControl.Instance.Controls["CurrentSensorsUserControl"].BringToFront();
         }
@@ -133,11 +133,22 @@ namespace LabInventory
         {
             if (!ToolsUserControl.Instance.Controls.ContainsKey("StroboScopesUserControl"))
             {
-                StroboScopesUserControl _powerTools = new StroboScopesUserControl();
-                _powerTools.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_powerTools);
+                StroboScopesUserControl _strobos = new StroboScopesUserControl();
+                _strobos.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_strobos);
             }
             InstrumentsUserControl.Instance.Controls["StroboScopesUserControl"].BringToFront();
+        }
+
+        private void btnThermometers_Click(object sender, EventArgs e)
+        {
+            if (!ToolsUserControl.Instance.Controls.ContainsKey("ThermometersUserControl"))
+            {
+                ThermometersUserControl _thermos = new ThermometersUserControl();
+                _thermos.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_thermos);
+            }
+            InstrumentsUserControl.Instance.Controls["ThermometersUserControl"].BringToFront();
         }
     }
 }

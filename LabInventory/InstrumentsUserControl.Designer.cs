@@ -35,7 +35,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.CurrentSensorsButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnThermometers = new System.Windows.Forms.Button();
             this.OscilloscopesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -134,18 +134,19 @@
             this.button3.Text = "Instruments";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnThermometers
             // 
-            this.button2.BackColor = System.Drawing.Color.LightBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button2.Location = new System.Drawing.Point(704, 232);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 103);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Thermometers";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnThermometers.BackColor = System.Drawing.Color.LightBlue;
+            this.btnThermometers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThermometers.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThermometers.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnThermometers.Location = new System.Drawing.Point(704, 232);
+            this.btnThermometers.Name = "btnThermometers";
+            this.btnThermometers.Size = new System.Drawing.Size(198, 103);
+            this.btnThermometers.TabIndex = 19;
+            this.btnThermometers.Text = "Thermometers";
+            this.btnThermometers.UseVisualStyleBackColor = false;
+            this.btnThermometers.Click += new System.EventHandler(this.btnThermometers_Click);
             // 
             // OscilloscopesButton
             // 
@@ -172,7 +173,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.CurrentSensorsButton);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnThermometers);
             this.Controls.Add(this.OscilloscopesButton);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "InstrumentsUserControl";
@@ -191,7 +192,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button CurrentSensorsButton;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnThermometers;
         private System.Windows.Forms.Button OscilloscopesButton;
     }
 }

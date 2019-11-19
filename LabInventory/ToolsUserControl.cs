@@ -50,12 +50,17 @@ namespace LabInventory
             //Show the electronic tools tab
             if (!ToolsUserControl.Instance.Controls.ContainsKey("ElectronicToolsUserControl"))
             {
-                ElectronicToolsUserControl _powerTools = new ElectronicToolsUserControl();
-                _powerTools.Dock = DockStyle.Fill;
-                ToolsUserControl.Instance.Controls.Add(_powerTools);
+                ElectronicToolsUserControl _electronicTools = new ElectronicToolsUserControl();
+                _electronicTools.Dock = DockStyle.Fill;
+                ToolsUserControl.Instance.Controls.Add(_electronicTools);
             }
             ToolsUserControl.Instance.Controls["ElectronicToolsUserControl"].BringToFront();
 
+
+        }
+
+        private void ToolsUserControl_Load(object sender, EventArgs e)
+        {
 
         }
     }

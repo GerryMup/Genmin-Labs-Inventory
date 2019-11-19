@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Npgsql;
 
 namespace LabInventory
 {
@@ -28,30 +29,34 @@ namespace LabInventory
 
         }
 
-        //Make a connection to the SQL Database
-        SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"|DataDirectory|\\Database1.mdf\";Integrated Security=True");
-        SqlCommand cmd;
-        SqlDataReader reader;
 
         private string getLogins(String _name)
         {
-            //Function for getting data from the database
-            connection.Open();
-            String queryString = "SELECT * FROM LoginCredentials WHERE Name = '" + _name + "'";
-            cmd = new SqlCommand(queryString, connection);
-            reader = cmd.ExecuteReader();
-            reader.Read();
-            string _data = "";
+
+            string connstring = String.Format("Server={0};Port={1};" +
+            "User Id={2};Password={3};Database={4};",
+            "PostgreSQL.school.eie.wits.ac.za", "5432", "inventory",
+            "!inventory!", "inventory");
+
+            string connection_string = "Server=146.141.16.251;Port=5432;User Id=inventory;Password=!inventory!;Database=inventory;";
+            // Making connection with Npgsql provider
+            NpgsqlConnection connection = new NpgsqlConnection(connection_string);
+
             try
             {
-                _data = "" + reader[1].ToString();
+                //Try to open a connection
+                connection.Open();
             }
-            catch (Exception e)
+            catch (Exception msg)
             {
-                throw e;
+                // something went wrong, and you wanna know why
+                MessageBox.Show(msg.ToString());
             }
-            connection.Close();
-            return _data;
+            finally
+            {
+                connection.Close();
+            }
+            return "Ronny";
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
