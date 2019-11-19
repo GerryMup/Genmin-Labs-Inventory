@@ -33,7 +33,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.btnThreePhase = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnGenerators = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnDCMotors = new System.Windows.Forms.Button();
@@ -106,18 +106,19 @@
             this.button5.Text = "Others";
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnGenerators
             // 
-            this.button4.BackColor = System.Drawing.Color.LightBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button4.Location = new System.Drawing.Point(93, 232);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(202, 103);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Generators";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnGenerators.BackColor = System.Drawing.Color.LightBlue;
+            this.btnGenerators.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerators.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerators.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnGenerators.Location = new System.Drawing.Point(93, 232);
+            this.btnGenerators.Name = "btnGenerators";
+            this.btnGenerators.Size = new System.Drawing.Size(202, 103);
+            this.btnGenerators.TabIndex = 12;
+            this.btnGenerators.Text = "Generators";
+            this.btnGenerators.UseVisualStyleBackColor = false;
+            this.btnGenerators.Click += new System.EventHandler(this.btnGenerators_Click);
             // 
             // button3
             // 
@@ -168,7 +169,7 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btnThreePhase);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnGenerators);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnDCMotors);
@@ -185,7 +186,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnThreePhase;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnGenerators;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnDCMotors;

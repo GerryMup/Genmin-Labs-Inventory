@@ -74,5 +74,16 @@ namespace LabInventory
             }
             EquipmentUserControl.Instance.Controls["ThreePhaseUserControl"].BringToFront();
         }
+
+        private void btnGenerators_Click(object sender, EventArgs e)
+        {
+            if (!EquipmentUserControl.Instance.Controls.ContainsKey("GeneratorsUserControl"))
+            {
+                GeneratorsUserControl _equip = new GeneratorsUserControl();
+                _equip.Dock = DockStyle.Fill;
+                EquipmentUserControl.Instance.Controls.Add(_equip);
+            }
+            EquipmentUserControl.Instance.Controls["ThreePhaseUserControl"].BringToFront();
+        }
     }
 }

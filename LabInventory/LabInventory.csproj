@@ -122,6 +122,12 @@
     <Compile Include="EquipmentUserControl.Designer.cs">
       <DependentUpon>EquipmentUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneratorsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GeneratorsUserControl.Designer.cs">
+      <DependentUpon>GeneratorsUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="InstrumentsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EquipmentUserControl.resx">
       <DependentUpon>EquipmentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorsUserControl.resx">
+      <DependentUpon>GeneratorsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InstrumentsUserControl.resx">
       <DependentUpon>InstrumentsUserControl.cs</DependentUpon>
