@@ -164,6 +164,12 @@
     <Compile Include="Main Menu.Designer.cs">
       <DependentUpon>Main Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MobileMachinesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MobileMachinesUserControl.Designer.cs">
+      <DependentUpon>MobileMachinesUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MultimetersUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Menu.resx">
       <DependentUpon>Main Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MobileMachinesUserControl.resx">
+      <DependentUpon>MobileMachinesUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MultimetersUserControl.resx">
       <DependentUpon>MultimetersUserControl.cs</DependentUpon>

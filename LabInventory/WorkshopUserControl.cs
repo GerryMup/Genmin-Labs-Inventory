@@ -43,5 +43,16 @@ namespace LabInventory
             }
             WorkshopUserControl.Instance.Controls["FixedMachinesUserControl"].BringToFront();
         }
+
+        private void btnMobileMachines_Click(object sender, EventArgs e)
+        {
+            if (!WorkshopUserControl.Instance.Controls.ContainsKey("MobileMachinesUserControl"))
+            {
+                MobileMachinesUserControl _fixedMachines = new MobileMachinesUserControl();
+                _fixedMachines.Dock = DockStyle.Fill;
+                WorkshopUserControl.Instance.Controls.Add(_fixedMachines);
+            }
+            WorkshopUserControl.Instance.Controls["MobileMachinesUserControl"].BringToFront();
+        }
     }
 }
