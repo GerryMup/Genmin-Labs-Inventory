@@ -31,7 +31,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.btnSinglePhase = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnThreePhase = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -79,18 +79,19 @@
             this.button7.Text = "Fire Extinguishers";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnThreePhase
             // 
-            this.button6.BackColor = System.Drawing.Color.LightBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button6.Location = new System.Drawing.Point(704, 72);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(204, 102);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "Three Phase Motors";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnThreePhase.BackColor = System.Drawing.Color.LightBlue;
+            this.btnThreePhase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThreePhase.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThreePhase.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnThreePhase.Location = new System.Drawing.Point(704, 72);
+            this.btnThreePhase.Name = "btnThreePhase";
+            this.btnThreePhase.Size = new System.Drawing.Size(204, 102);
+            this.btnThreePhase.TabIndex = 14;
+            this.btnThreePhase.Text = "Three Phase Motors";
+            this.btnThreePhase.UseVisualStyleBackColor = false;
+            this.btnThreePhase.Click += new System.EventHandler(this.btnThreePhase_Click);
             // 
             // button5
             // 
@@ -165,7 +166,7 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.btnSinglePhase);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnThreePhase);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -182,7 +183,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnSinglePhase;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnThreePhase;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;

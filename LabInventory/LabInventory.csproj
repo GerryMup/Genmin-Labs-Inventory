@@ -178,6 +178,12 @@
     <Compile Include="ThermometersUserControl.Designer.cs">
       <DependentUpon>ThermometersUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThreePhaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThreePhaseUserControl.Designer.cs">
+      <DependentUpon>ThreePhaseUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThermometersUserControl.resx">
       <DependentUpon>ThermometersUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThreePhaseUserControl.resx">
+      <DependentUpon>ThreePhaseUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolsUserControl.resx">
       <DependentUpon>ToolsUserControl.cs</DependentUpon>

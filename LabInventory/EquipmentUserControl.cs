@@ -63,5 +63,16 @@ namespace LabInventory
             }
             EquipmentUserControl.Instance.Controls["SinglePhaseUserControl"].BringToFront();
         }
+
+        private void btnThreePhase_Click(object sender, EventArgs e)
+        {
+            if (!EquipmentUserControl.Instance.Controls.ContainsKey("ThreePhaseUserControl"))
+            {
+                ThreePhaseUserControl _equip = new ThreePhaseUserControl();
+                _equip.Dock = DockStyle.Fill;
+                EquipmentUserControl.Instance.Controls.Add(_equip);
+            }
+            EquipmentUserControl.Instance.Controls["ThreePhaseUserControl"].BringToFront();
+        }
     }
 }
