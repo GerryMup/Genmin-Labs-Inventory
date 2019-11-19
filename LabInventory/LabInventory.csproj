@@ -160,6 +160,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SinglePhaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SinglePhaseUserControl.Designer.cs">
+      <DependentUpon>SinglePhaseUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="StroboScopesUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -227,6 +233,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SinglePhaseUserControl.resx">
+      <DependentUpon>SinglePhaseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StroboScopesUserControl.resx">
       <DependentUpon>StroboScopesUserControl.cs</DependentUpon>
     </EmbeddedResource>

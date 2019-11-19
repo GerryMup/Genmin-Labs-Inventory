@@ -10,31 +10,31 @@ using System.Windows.Forms;
 
 namespace LabInventory
 {
-    public partial class DCMotorsUserControl : UserControl
+    public partial class SinglePhaseUserControl : UserControl
     {
 
-        private static DCMotorsUserControl _instance;
+        private static SinglePhaseUserControl _instance;
 
-        public static DCMotorsUserControl Instance
+        public static SinglePhaseUserControl Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new DCMotorsUserControl();
+                    _instance = new SinglePhaseUserControl();
                 }
                 return _instance;
             }
         }
 
-        public DCMotorsUserControl()
+        public SinglePhaseUserControl()
         {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            if (!DCMotorsUserControl.Instance.Controls.ContainsKey("EquipmentUserControl"))
+            if (!SinglePhaseUserControl.Instance.Controls.ContainsKey("EquipmentUserControl"))
             {
                 EquipmentUserControl _equipment = new EquipmentUserControl();
                 _equipment.Dock = DockStyle.Fill;

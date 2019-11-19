@@ -52,5 +52,16 @@ namespace LabInventory
             }
             EquipmentUserControl.Instance.Controls["DCMotorsUserControl"].BringToFront();
         }
+
+        private void btnSinglePhase_Click(object sender, EventArgs e)
+        {
+            if (!EquipmentUserControl.Instance.Controls.ContainsKey("SinglePhaseUserControl"))
+            {
+                SinglePhaseUserControl _equip = new SinglePhaseUserControl();
+                _equip.Dock = DockStyle.Fill;
+                EquipmentUserControl.Instance.Controls.Add(_equip);
+            }
+            EquipmentUserControl.Instance.Controls["SinglePhaseUserControl"].BringToFront();
+        }
     }
 }
