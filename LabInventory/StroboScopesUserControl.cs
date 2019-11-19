@@ -36,9 +36,9 @@ namespace LabInventory
         {
             if (!StroboScopesUserControl.Instance.Controls.ContainsKey("InstrumentsUserControl"))
             {
-                InstrumentsUserControl _tools = new InstrumentsUserControl();
-                _tools.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_tools);
+                InstrumentsUserControl _instruments = new InstrumentsUserControl();
+                _instruments.Dock = DockStyle.Fill;
+                InstrumentsUserControl.Instance.Controls.Add(_instruments);
             }
             InstrumentsUserControl.Instance.Controls["InstrumentsUserControl"].BringToFront();
         }
