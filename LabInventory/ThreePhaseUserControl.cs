@@ -42,5 +42,10 @@ namespace LabInventory
             }
             EquipmentUserControl.Instance.Controls["EquipmentUserControl"].BringToFront();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

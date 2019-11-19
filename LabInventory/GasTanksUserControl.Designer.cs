@@ -207,7 +207,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(407, 44);
             this.button5.TabIndex = 230;
-            this.button5.Text = "Power Tools";
+            this.button5.Text = "Gas Tanks";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // textBox1

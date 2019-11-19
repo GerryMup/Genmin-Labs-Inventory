@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BackButton = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -41,33 +40,18 @@
             this.ConditionField = new System.Windows.Forms.TextBox();
             this.ManufacturerField = new System.Windows.Forms.TextBox();
             this.WNumberField = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.PowerToolsGrid = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.AddNewButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PowerToolsGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // BackButton
-            // 
-            this.BackButton.BackColor = System.Drawing.Color.Transparent;
-            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.Image = global::LabInventory.Properties.Resources.back;
-            this.BackButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BackButton.Location = new System.Drawing.Point(50, 17);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(88, 31);
-            this.BackButton.TabIndex = 46;
-            this.BackButton.Text = "Back";
-            this.BackButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BackButton.UseVisualStyleBackColor = false;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // button12
             // 
@@ -213,22 +197,6 @@
             this.WNumberField.Size = new System.Drawing.Size(266, 27);
             this.WNumberField.TabIndex = 34;
             // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::LabInventory.Properties.Resources.search;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(608, 69);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(120, 31);
-            this.button7.TabIndex = 33;
-            this.button7.Text = "W-number";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.LightBlue;
@@ -239,7 +207,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(407, 44);
             this.button5.TabIndex = 32;
-            this.button5.Text = "Power Tools";
+            this.button5.Text = "Oscilloscopes";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // textBox1
@@ -261,6 +229,48 @@
             this.PowerToolsGrid.Name = "PowerToolsGrid";
             this.PowerToolsGrid.Size = new System.Drawing.Size(901, 244);
             this.PowerToolsGrid.TabIndex = 30;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(575, 157);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // BackButton
+            // 
+            this.BackButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackButton.Image = global::LabInventory.Properties.Resources.back;
+            this.BackButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BackButton.Location = new System.Drawing.Point(50, 17);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(88, 31);
+            this.BackButton.TabIndex = 46;
+            this.BackButton.Text = "Back";
+            this.BackButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Image = global::LabInventory.Properties.Resources.search;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(608, 69);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(120, 31);
+            this.button7.TabIndex = 33;
+            this.button7.Text = "W-number";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -324,16 +334,6 @@
             this.button2.Text = "Delete";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(575, 157);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // OscilloscopesUserControl
             // 
