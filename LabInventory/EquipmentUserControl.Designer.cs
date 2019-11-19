@@ -35,7 +35,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnGenerators = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGasTanks = new System.Windows.Forms.Button();
             this.btnDCMotors = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -133,18 +133,19 @@
             this.button3.Text = "Equipment";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnGasTanks
             // 
-            this.button2.BackColor = System.Drawing.Color.LightBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button2.Location = new System.Drawing.Point(396, 232);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 103);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Gas Tanks";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnGasTanks.BackColor = System.Drawing.Color.LightBlue;
+            this.btnGasTanks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGasTanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGasTanks.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnGasTanks.Location = new System.Drawing.Point(396, 232);
+            this.btnGasTanks.Name = "btnGasTanks";
+            this.btnGasTanks.Size = new System.Drawing.Size(198, 103);
+            this.btnGasTanks.TabIndex = 10;
+            this.btnGasTanks.Text = "Gas Tanks";
+            this.btnGasTanks.UseVisualStyleBackColor = false;
+            this.btnGasTanks.Click += new System.EventHandler(this.btnGasTanks_Click);
             // 
             // btnDCMotors
             // 
@@ -171,7 +172,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnGenerators);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGasTanks);
             this.Controls.Add(this.btnDCMotors);
             this.Name = "EquipmentUserControl";
             this.Size = new System.Drawing.Size(1000, 569);
@@ -188,7 +189,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnGenerators;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGasTanks;
         private System.Windows.Forms.Button btnDCMotors;
     }
 }

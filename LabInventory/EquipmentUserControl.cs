@@ -83,7 +83,18 @@ namespace LabInventory
                 _equip.Dock = DockStyle.Fill;
                 EquipmentUserControl.Instance.Controls.Add(_equip);
             }
-            EquipmentUserControl.Instance.Controls["ThreePhaseUserControl"].BringToFront();
+            EquipmentUserControl.Instance.Controls["GeneratorsUserControl"].BringToFront();
+        }
+
+        private void btnGasTanks_Click(object sender, EventArgs e)
+        {
+            if (!EquipmentUserControl.Instance.Controls.ContainsKey("GasTanksUserControl"))
+            {
+                GasTanksUserControl _equip = new GasTanksUserControl();
+                _equip.Dock = DockStyle.Fill;
+                EquipmentUserControl.Instance.Controls.Add(_equip);
+            }
+            EquipmentUserControl.Instance.Controls["GasTanksUserControl"].BringToFront();
         }
     }
 }
