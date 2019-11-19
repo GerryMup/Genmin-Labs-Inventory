@@ -41,5 +41,16 @@ namespace LabInventory
         {
 
         }
+
+        private void btnDCMotors_Click(object sender, EventArgs e)
+        {
+            if (!EquipmentUserControl.Instance.Controls.ContainsKey("DCMotorsUserControl"))
+            {
+                DCMotorsUserControl _equip = new DCMotorsUserControl();
+                _equip.Dock = DockStyle.Fill;
+                EquipmentUserControl.Instance.Controls.Add(_equip);
+            }
+            EquipmentUserControl.Instance.Controls["DCMotorsUserControl"].BringToFront();
+        }
     }
 }

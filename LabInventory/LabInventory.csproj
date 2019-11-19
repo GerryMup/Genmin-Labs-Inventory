@@ -104,6 +104,12 @@
     <Compile Include="CurrentSensorsUserControl.Designer.cs">
       <DependentUpon>CurrentSensorsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DCMotorsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DCMotorsUserControl.Designer.cs">
+      <DependentUpon>DCMotorsUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ElectronicToolsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CurrentSensorsUserControl.resx">
       <DependentUpon>CurrentSensorsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DCMotorsUserControl.resx">
+      <DependentUpon>DCMotorsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ElectronicToolsUserControl.resx">
       <DependentUpon>ElectronicToolsUserControl.cs</DependentUpon>

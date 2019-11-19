@@ -36,7 +36,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDCMotors = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button9
@@ -143,18 +143,19 @@
             this.button2.Text = "Gas Tanks";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnDCMotors
             // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(93, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 102);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "DC Motors";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDCMotors.BackColor = System.Drawing.Color.LightBlue;
+            this.btnDCMotors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDCMotors.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDCMotors.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnDCMotors.Location = new System.Drawing.Point(93, 72);
+            this.btnDCMotors.Name = "btnDCMotors";
+            this.btnDCMotors.Size = new System.Drawing.Size(202, 102);
+            this.btnDCMotors.TabIndex = 9;
+            this.btnDCMotors.Text = "DC Motors";
+            this.btnDCMotors.UseVisualStyleBackColor = false;
+            this.btnDCMotors.Click += new System.EventHandler(this.btnDCMotors_Click);
             // 
             // EquipmentUserControl
             // 
@@ -168,7 +169,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDCMotors);
             this.Name = "EquipmentUserControl";
             this.Size = new System.Drawing.Size(1000, 569);
             this.ResumeLayout(false);
@@ -185,6 +186,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDCMotors;
     }
 }
