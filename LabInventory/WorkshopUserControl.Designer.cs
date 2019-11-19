@@ -36,7 +36,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFixedMachines = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button9
@@ -143,18 +143,19 @@
             this.button2.Text = "Workshop";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnFixedMachines
             // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(93, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 102);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Fixed Machines";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFixedMachines.BackColor = System.Drawing.Color.LightBlue;
+            this.btnFixedMachines.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFixedMachines.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFixedMachines.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnFixedMachines.Location = new System.Drawing.Point(93, 72);
+            this.btnFixedMachines.Name = "btnFixedMachines";
+            this.btnFixedMachines.Size = new System.Drawing.Size(202, 102);
+            this.btnFixedMachines.TabIndex = 27;
+            this.btnFixedMachines.Text = "Fixed Machines";
+            this.btnFixedMachines.UseVisualStyleBackColor = false;
+            this.btnFixedMachines.Click += new System.EventHandler(this.btnFixedMachines_Click);
             // 
             // WorkshopUserControl
             // 
@@ -168,7 +169,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFixedMachines);
             this.Name = "WorkshopUserControl";
             this.Size = new System.Drawing.Size(1000, 569);
             this.ResumeLayout(false);
@@ -185,6 +186,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFixedMachines;
     }
 }

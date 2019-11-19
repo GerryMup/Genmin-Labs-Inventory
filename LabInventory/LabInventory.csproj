@@ -128,6 +128,12 @@
     <Compile Include="ExtinguiashersUserControl.Designer.cs">
       <DependentUpon>ExtinguiashersUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="FixedMachinesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixedMachinesUserControl.Designer.cs">
+      <DependentUpon>FixedMachinesUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GasTanksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExtinguiashersUserControl.resx">
       <DependentUpon>ExtinguiashersUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixedMachinesUserControl.resx">
+      <DependentUpon>FixedMachinesUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GasTanksUserControl.resx">
       <DependentUpon>GasTanksUserControl.cs</DependentUpon>

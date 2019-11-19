@@ -32,5 +32,16 @@ namespace LabInventory
         {
             InitializeComponent();
         }
+
+        private void btnFixedMachines_Click(object sender, EventArgs e)
+        {
+            if (!WorkshopUserControl.Instance.Controls.ContainsKey("FixedMachinesUserControl"))
+            {
+                FixedMachinesUserControl _fixedMachines = new FixedMachinesUserControl();
+                _fixedMachines.Dock = DockStyle.Fill;
+                WorkshopUserControl.Instance.Controls.Add(_fixedMachines);
+            }
+            WorkshopUserControl.Instance.Controls["FixedMachinesUserControl"].BringToFront();
+        }
     }
 }
