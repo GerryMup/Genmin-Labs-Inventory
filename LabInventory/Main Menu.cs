@@ -23,16 +23,17 @@ namespace LabInventory
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-
-
-
+        LabInventory.Main_Menu obj;
         public Main_Menu()
         {
             InitializeComponent();
             // Start with the expanded panel
             isSlidingPanelExpanded = true;
             expandedPanel();
+
+            obj = this;
             WindowState = FormWindowState.Maximized;
+            
         }
 
         private void Main_Menu_Load(object sender, EventArgs e)
@@ -46,15 +47,28 @@ namespace LabInventory
             Environment.Exit(0);
         }
 
+        private void btnMinMax_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                LabInventory.Program.main_menu_object.Size = new Size(600, 1200);
+            }
+            else
+            {
+                MessageBox.Show("Dimentions " +this.Height + " " +this.Width);
+                WindowState = FormWindowState.Maximized;
+            }
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             LoginForm _loginForm = new LoginForm();
-            this.Hide();
+            Hide();
             _loginForm.Show();
         }
 
@@ -139,7 +153,7 @@ namespace LabInventory
                     isSlidingPanelExpanded = false;
                     SlidingPanelTimer.Stop();
                     retractedPanel();
-                    this.Refresh();
+                    Refresh();
 
                 }
 
@@ -154,7 +168,7 @@ namespace LabInventory
                     isSlidingPanelExpanded = true;
                     SlidingPanelTimer.Stop();
                     expandedPanel();
-                    this.Refresh();
+                    Refresh();
 
                 }
             }
@@ -216,6 +230,11 @@ namespace LabInventory
             {
                 WorkshopUserControl.Instance.BringToFront();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

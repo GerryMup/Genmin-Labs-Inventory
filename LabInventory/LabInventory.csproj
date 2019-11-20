@@ -324,6 +324,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\min_max.png" />
     <None Include="Resources\LoginBackground.png" />
     <None Include="Resources\WitsEIE.jpg" />
     <None Include="Resources\back.png" />

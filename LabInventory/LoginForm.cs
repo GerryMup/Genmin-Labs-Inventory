@@ -73,7 +73,7 @@ namespace LabInventory
                 IncorrectCredentials.Hide();
                 //Create and show the main menu when login is successful
                 Main_Menu _mainMenu = new Main_Menu();
-                this.Hide();
+                Hide();
                 _mainMenu.Show();
             }
             else
