@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace LabInventory
 {
@@ -36,8 +37,8 @@ namespace LabInventory
         }
 
         //Make a connection to the SQL Database
-        
-        SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"|DataDirectory|\\Database1.mdf\";Integrated Security=True");
+
+        //SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True");
 
         private void PowerToolsUserControl_Load(object sender, EventArgs e)
         {
@@ -51,8 +52,15 @@ namespace LabInventory
 
         public void refresh_dataGridView()
         {
+
+            //SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True");
+
+            //SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
+            //SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True");
             try
             {
+                SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
+
                 SqlCommand cmd = new SqlCommand("ShowPowerTools_Procedure", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -92,7 +100,7 @@ namespace LabInventory
         //Adding new power items to the database
         private void AddNewButton_Click(object sender, EventArgs e)
         {
-
+            SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
             //Make sure the user does not try to add items where there are empty fields
             if ((WNumberField.Text == "") || (ManufacturerField.Text == "") || (ConditionField.Text == "") ||
                 (DescriptionField.Text == "") || (AvailableField.Text == "") || (LocationField.Text == ""))

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace LabInventory
 {
@@ -36,6 +38,22 @@ namespace LabInventory
             
         }
 
+        public SqlConnection datatbase_connection()
+        {
+            string connection_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True";
+            SqlConnection connection = null;
+            try
+            {
+                connection = new SqlConnection(connection_string);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Failed to make a database connection: " + ex.Message);
+            }
+                return connection;
+
+        }
+
         private void Main_Menu_Load(object sender, EventArgs e)
         {
 
@@ -45,19 +63,6 @@ namespace LabInventory
         {
             //Close the system with this exit button
             Environment.Exit(0);
-        }
-
-        private void btnMinMax_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Maximized)
-            {
-                LabInventory.Program.main_menu_object.Size = new Size(600, 1200);
-            }
-            else
-            {
-                MessageBox.Show("Dimentions " +this.Height + " " +this.Width);
-                WindowState = FormWindowState.Maximized;
-            }
         }
 
         private void button8_Click(object sender, EventArgs e)
