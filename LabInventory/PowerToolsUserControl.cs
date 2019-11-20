@@ -109,8 +109,8 @@ namespace LabInventory
             else
             {
                 MessageBox.Show("Now Attempting to Add");
-                SqlCommand cmd = new SqlCommand("AddPowerTools_Procedure", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
+                string query_string = "insert into PowerToolsTable(WNumber,Manufacturer,Condition,Description,Available,Location) values(@WNumber,@Manufacturer,@Condition,@Description,@Available,@Location)";
+                SqlCommand cmd = new SqlCommand(query_string, connection);
 
                 cmd.Parameters.AddWithValue("@WNumber", WNumberField.Text);
                 cmd.Parameters.AddWithValue("@Manufacturer", ManufacturerField.Text);
