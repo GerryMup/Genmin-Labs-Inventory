@@ -36,6 +36,7 @@ namespace LabInventory
         }
 
         //Make a connection to the SQL Database
+        
         SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"|DataDirectory|\\Database1.mdf\";Integrated Security=True");
 
         private void PowerToolsUserControl_Load(object sender, EventArgs e)
