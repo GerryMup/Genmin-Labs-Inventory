@@ -60,7 +60,7 @@ namespace LabInventory
             try
             {
                 SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
-                string query_string = "select * from PowerToolsTable";
+                string query_string = "select * from Inventory where Category='PowerTools'";
                 SqlCommand cmd = new SqlCommand(query_string, connection);
 
                 SqlDataAdapter adaptor = new SqlDataAdapter(cmd);
@@ -101,25 +101,30 @@ namespace LabInventory
         {
             SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
             //Make sure the user does not try to add items where there are empty fields
-            if ((WNumberField.Text == "") || (ManufacturerField.Text == "") || (ConditionField.Text == "") ||
-                (DescriptionField.Text == "") || (AvailableField.Text == "") || (LocationField.Text == ""))
+            if ((txtName.Text == "") || (txtDescription.Text == "") || (txtManufacturer.Text == "") ||
+               (txtNumber.Text == "") || (txtCondition.Text == "")||
+                (txtAvailable.Text == "") || (txtLocation.Text == ""))
             {
                 MessageBox.Show("Please ensure that there are no empty fields");
             }
             else
             {
                 MessageBox.Show("Now Attempting to Add");
-                string query_string = "insert into PowerToolsTable(WNumber,Manufacturer,Condition,Description,Available,Location) values(@WNumber,@Manufacturer,@Condition,@Description,@Available,@Location)";
+                string query_string = "insert into Inventory(Name,Description,Manufacturer,Category,Number,Available,Condition,Location) values(@Name,@Description,@Manufacturer,@Category,@Number,@Available,@Condition,@Location)";
                 SqlCommand cmd = new SqlCommand(query_string, connection);
 
-                cmd.Parameters.AddWithValue("@WNumber", WNumberField.Text);
-                cmd.Parameters.AddWithValue("@Manufacturer", ManufacturerField.Text);
-                cmd.Parameters.AddWithValue("@Condition", ConditionField.Text);
-                cmd.Parameters.AddWithValue("@Description", DescriptionField.Text);
-                cmd.Parameters.AddWithValue("@Available", AvailableField.Text);
-                cmd.Parameters.AddWithValue("@Location", LocationField.Text);
+                //Fecth the contents from the entered text fields
+                cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                cmd.Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text);
+                cmd.Parameters.AddWithValue("@Category", "PowerTools");
+                cmd.Parameters.AddWithValue("@Number", txtNumber.Text);
+                cmd.Parameters.AddWithValue("@Available", txtAvailable.Text);
+                cmd.Parameters.AddWithValue("@Condition", txtCondition.Text);
+                cmd.Parameters.AddWithValue("@Location", txtLocation.Text);
                 try
                 {
+                    //Excecute the query
                     cmd.Connection.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -167,6 +172,11 @@ namespace LabInventory
                 ToolsUserControl.Instance.Controls.Add(_tools);
             }
             ToolsUserControl.Instance.Controls["ToolsUserControl"].BringToFront();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
