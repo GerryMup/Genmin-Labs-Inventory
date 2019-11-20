@@ -32,6 +32,7 @@ namespace LabInventory
             // Start with the expanded panel
             isSlidingPanelExpanded = true;
             expandedPanel();
+            WindowState = FormWindowState.Maximized;
         }
 
         private void Main_Menu_Load(object sender, EventArgs e)

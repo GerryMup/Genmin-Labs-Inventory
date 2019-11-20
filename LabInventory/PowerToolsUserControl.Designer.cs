@@ -65,12 +65,18 @@
             // 
             // PowerToolsGrid
             // 
+            this.PowerToolsGrid.AllowUserToAddRows = false;
+            this.PowerToolsGrid.AllowUserToDeleteRows = false;
+            this.PowerToolsGrid.AllowUserToResizeColumns = false;
+            this.PowerToolsGrid.AllowUserToResizeRows = false;
             this.PowerToolsGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.PowerToolsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PowerToolsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PowerToolsGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.PowerToolsGrid.Location = new System.Drawing.Point(47, 113);
             this.PowerToolsGrid.Margin = new System.Windows.Forms.Padding(4);
             this.PowerToolsGrid.Name = "PowerToolsGrid";
+            this.PowerToolsGrid.ReadOnly = true;
             this.PowerToolsGrid.Size = new System.Drawing.Size(901, 244);
             this.PowerToolsGrid.TabIndex = 7;
             // 
