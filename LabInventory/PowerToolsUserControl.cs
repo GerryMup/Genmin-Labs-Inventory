@@ -47,7 +47,7 @@ namespace LabInventory
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            refresh_dataGridView();
         }
 
         public void refresh_dataGridView()
@@ -60,9 +60,8 @@ namespace LabInventory
             try
             {
                 SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
-
-                SqlCommand cmd = new SqlCommand("ShowPowerTools_Procedure", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
+                string query_string = "select * from PowerToolsTable";
+                SqlCommand cmd = new SqlCommand(query_string, connection);
 
                 SqlDataAdapter adaptor = new SqlDataAdapter(cmd);
                 DataSet dataset = new DataSet(); //Data set for filling in the data in the Grid View
@@ -141,7 +140,12 @@ namespace LabInventory
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if (PowerToolsGrid.SelectedCells.Count > 0)
+            {
+                string id = PowerToolsGrid.SelectedCells[0].Value.ToString();
+                MessageBox.Show(id);
+            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
