@@ -14,6 +14,8 @@ namespace LabInventory
 {
     public partial class PowerToolsUserControl : UserControl
     {
+        const string CATEGORY = "PowerTools";
+        const string PARENT_USER_CONTROL = "ToolsUserControl";
 
         private static PowerToolsUserControl _instance;
 
@@ -56,7 +58,7 @@ namespace LabInventory
         public void refresh_dataGridView()
         {
             Display_Manager display_manager = new Display_Manager();
-            string category = "PowerTools";
+            string category = CATEGORY;
             display_manager.Refresh(PowerToolsGrid, category);
         }
 
@@ -66,7 +68,7 @@ namespace LabInventory
         {
             Display_Manager _display_manager = new Display_Manager();
 
-            string[] _items = { txtName.Text, txtDescription.Text, txtManufacturer.Text, "PowerTools", txtNumber.Text, txtAvailable.Text, txtCondition.Text, txtLocation.Text };
+            string[] _items = { txtName.Text, txtDescription.Text, txtManufacturer.Text, CATEGORY, txtNumber.Text, txtAvailable.Text, txtCondition.Text, txtLocation.Text };
             string[] _entries = _display_manager.Validate_Entries(_items);
 
             if (_entries != null)
@@ -107,22 +109,20 @@ namespace LabInventory
 
         //*************************************************************************************************************************************************************************
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //*************************************************************************************************************************************************************************
-
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (!PowerToolsUserControl.Instance.Controls.ContainsKey("ToolsUserControl"))
+            refresh_dataGridView();
+
+            //Manually invoke the clearing event to clear all the search fields.
+            btnClear_Click(sender, e);
+
+            if (!PowerToolsUserControl.Instance.Controls.ContainsKey(PARENT_USER_CONTROL))
             {
                 ToolsUserControl _tools = new ToolsUserControl();
                 _tools.Dock = DockStyle.Fill;
                 ToolsUserControl.Instance.Controls.Add(_tools);
             }
-            ToolsUserControl.Instance.Controls["ToolsUserControl"].BringToFront();
+            ToolsUserControl.Instance.Controls[PARENT_USER_CONTROL].BringToFront();
         }
 
         //*************************************************************************************************************************************************************************
