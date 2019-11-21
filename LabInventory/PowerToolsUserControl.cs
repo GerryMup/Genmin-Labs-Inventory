@@ -97,47 +97,35 @@ namespace LabInventory
 
 
         //Adding new power items to the database
-        private void AddNewButton_Click(object sender, EventArgs e)
+        private void AddNewItemButton_Click(object sender, EventArgs e)
         {
             SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
             //Make sure the user does not try to add items where there are empty fields
             if ((txtName.Text == "") || (txtDescription.Text == "") || (txtManufacturer.Text == "") ||
-               (txtNumber.Text == "") || (txtCondition.Text == "")||
+               (txtNumber.Text == "") || (txtCondition.Text == "") ||
                 (txtAvailable.Text == "") || (txtLocation.Text == ""))
             {
                 MessageBox.Show("Please ensure that there are no empty fields");
             }
-            else
+            else if ((txtAvailable.TextLength > 3))
             {
-                MessageBox.Show("Now Attempting to Add");
-                string query_string = "insert into Inventory(Name,Description,Manufacturer,Category,Number,Available,Condition,Location) values(@Name,@Description,@Manufacturer,@Category,@Number,@Available,@Condition,@Location)";
-                SqlCommand cmd = new SqlCommand(query_string, connection);
+                MessageBox.Show("The value for 'Available' should be either Yes or No!");
+            }
+            else if ((txtAvailable.Text == "Yes") || (txtAvailable.Text == "No"))
+            {
+                string[] _items = { txtName.Text, txtDescription.Text, txtManufacturer.Text, "PowerTools", txtNumber.Text, txtAvailable.Text, txtCondition.Text, txtLocation.Text };
 
                 //Fecth the contents from the entered text fields
-                cmd.Parameters.AddWithValue("@Name", txtName.Text);
-                cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                cmd.Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text);
-                cmd.Parameters.AddWithValue("@Category", "PowerTools");
-                cmd.Parameters.AddWithValue("@Number", txtNumber.Text);
-                cmd.Parameters.AddWithValue("@Available", txtAvailable.Text);
-                cmd.Parameters.AddWithValue("@Condition", txtCondition.Text);
-                cmd.Parameters.AddWithValue("@Location", txtLocation.Text);
-                try
-                {
-                    //Excecute the query
-                    cmd.Connection.Open();
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Invalid SQL Operation: " + ex);
-                }
-                finally
-                {
-                    cmd.Connection.Close();
-                }
+
+                Database_Class database_access = new Database_Class();
+                database_access.addItem(_items);
+                refresh_dataGridView(); // Refresh the viewed data after you finish adding an item
             }
-            refresh_dataGridView(); // Refresh the viewed data after you finish adding an item
+            else
+            {
+                MessageBox.Show("The value for 'Available' should be either Yes or No!");
+            }
+           
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -306,7 +306,7 @@
             this.AddNewButton.Text = "Add New";
             this.AddNewButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AddNewButton.UseVisualStyleBackColor = false;
-            this.AddNewButton.Click += new System.EventHandler(this.AddNewButton_Click);
+            this.AddNewButton.Click += new System.EventHandler(this.AddNewItemButton_Click);
             // 
             // btnRefresh
             // 

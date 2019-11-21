@@ -31,6 +31,38 @@ namespace LabInventory
             return connection;
         }
 
+        public void addItem(string [] _items)
+        {
+            SqlConnection connection = database_connection();
+            MessageBox.Show("Now Attempting to Add");
+            string query_string = "insert into Inventory(Name,Description,Manufacturer,Category,Number,Available,Condition,Location) values(@Name,@Description,@Manufacturer,@Category,@Number,@Available,@Condition,@Location)";
+            SqlCommand cmd = new SqlCommand(query_string, connection);
+
+            //Fecth the contents from the entered text fields
+            cmd.Parameters.AddWithValue("@Name", _items[0]);
+            cmd.Parameters.AddWithValue("@Description", _items[1]);
+            cmd.Parameters.AddWithValue("@Manufacturer", _items[2]);
+            cmd.Parameters.AddWithValue("@Category", _items[3]);
+            cmd.Parameters.AddWithValue("@Number", _items[4]);
+            cmd.Parameters.AddWithValue("@Available", _items[5]);
+            cmd.Parameters.AddWithValue("@Condition", _items[6]);
+            cmd.Parameters.AddWithValue("@Location", _items[7]);
+            try
+            {
+                //Excecute the query
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid SQL Operation: " + ex);
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+        }
+
 
         public void deleteItem(int Item_ID)
         {
