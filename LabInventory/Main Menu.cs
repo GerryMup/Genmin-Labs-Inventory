@@ -54,11 +54,7 @@ namespace LabInventory
 
         }
 
-        public string delete_verication_message(string _name, string W_number)
-        {
-            return "Confirm Deletion of Item: " + _name + ", With the Number: " + W_number;
-        }
-
+ 
         private void Main_Menu_Load(object sender, EventArgs e)
         {
 

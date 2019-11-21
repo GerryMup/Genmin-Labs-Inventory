@@ -52,11 +52,6 @@ namespace LabInventory
 
         public void refresh_dataGridView()
         {
-
-            //SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True");
-
-            //SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
-            //SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True");
             try
             {
                 SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
@@ -125,20 +120,16 @@ namespace LabInventory
             {
                 MessageBox.Show("The value for 'Available' should be either Yes or No!");
             }
-           
-
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (PowerToolsGrid.SelectedCells.Count > 0)
             {
-                string _item_name = PowerToolsGrid.CurrentRow.Cells[1].Value.ToString();
-                string _number = PowerToolsGrid.CurrentRow.Cells[5].Value.ToString();
-                int Item_ID = Convert.ToInt32(PowerToolsGrid.CurrentRow.Cells[0].Value.ToString());
-                string _verification_message = LabInventory.Program.main_menu_object.delete_verication_message(_item_name, _number);
+                Display_Manager _display_manager = new Display_Manager();
+
+                string _verification_message = _display_manager.Delete_Verification_Message(PowerToolsGrid);
+                int Item_ID = _display_manager.get_Item_ID(PowerToolsGrid);
 
                 if (MessageBox.Show(_verification_message, "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {

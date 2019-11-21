@@ -113,6 +113,7 @@
     <Compile Include="DCMotorsUserControl.Designer.cs">
       <DependentUpon>DCMotorsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Display_Manager.cs" />
     <Compile Include="ElectronicToolsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
