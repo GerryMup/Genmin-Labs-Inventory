@@ -98,21 +98,16 @@ namespace LabInventory
                 }
             }
         }
-        
-        //*************************************************************************************************************************************************************************
 
         //*************************************************************************************************************************************************************************
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtAvailable.Text = "";
-            txtCondition.Text = "";
-            txtDescription.Text = "";
-            txtLocation.Text = "";
-            txtManufacturer.Text = "";
-            txtName.Text = "";
-            txtNumber.Text = "";
+            Display_Manager _display_manager = new Display_Manager();
+            _display_manager.ClearInsertionFields(this);
         }
+
+        //*************************************************************************************************************************************************************************
 
         private void button6_Click(object sender, EventArgs e)
         {

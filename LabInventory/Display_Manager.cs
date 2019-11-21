@@ -79,9 +79,17 @@ namespace LabInventory
             grid.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        public void ClearInsertionFields()
-        {
+        //******************************************************************************************************************************************************************************
 
+        public void ClearInsertionFields(Control control)
+        {
+            foreach (Control _control in control.Controls)
+            {
+                if (_control.GetType() == typeof(TextBox))
+                {
+                    _control.Text = String.Empty;
+                }
+            }
         }
 
     }
