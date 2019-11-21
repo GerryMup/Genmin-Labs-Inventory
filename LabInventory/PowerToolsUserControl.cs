@@ -134,7 +134,9 @@ namespace LabInventory
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            (PowerToolsGrid.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name = '{0}'", txtSearch.Text);
+            string name = txtSearch.Text;
+            Display_Manager _disp_manager = new Display_Manager();
+            _disp_manager.FilterGridView(PowerToolsGrid, name);
         }
     }
 }

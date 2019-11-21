@@ -95,5 +95,11 @@ namespace LabInventory
             }
         }
 
+        //*************************************************************************************************************************************************************************
+
+        public void FilterGridView(DataGridView grid, string _name)
+        {
+            (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name = '{0}'", _name);
+        }
     }
 }
