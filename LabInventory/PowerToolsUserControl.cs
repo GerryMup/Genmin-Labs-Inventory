@@ -29,6 +29,7 @@ namespace LabInventory
             }
         }
 
+        //***************************************************************************************************************************************************************************
 
         //Initialize the Power Tools Control
         public PowerToolsUserControl()
@@ -36,61 +37,30 @@ namespace LabInventory
             InitializeComponent();
         }
 
-        //Make a connection to the SQL Database
-
-        //SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True");
+        //***************************************************************************************************************************************************************************
 
         private void PowerToolsUserControl_Load(object sender, EventArgs e)
         {
             refresh_dataGridView();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        //***************************************************************************************************************************************************************************
+
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             refresh_dataGridView();
         }
 
+        //***************************************************************************************************************************************************************************
+
         public void refresh_dataGridView()
         {
-            try
-            {
-                SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
-                string query_string = "select * from Inventory where Category='PowerTools'";
-                SqlCommand cmd = new SqlCommand(query_string, connection);
-
-                SqlDataAdapter adaptor = new SqlDataAdapter(cmd);
-                DataSet dataset = new DataSet(); //Data set for filling in the data in the Grid View
-                adaptor.Fill(dataset);
-
-                connection.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Invalid SQL operation: " + ex);
-                }
-                connection.Close();
-
-                //Chosing the data to be displayed in the Grid View on the Screen
-                PowerToolsGrid.DataSource = dataset.Tables[0];
-
-                //Making sure that the data grid view uses up all the space avaibale on the screen
-                PowerToolsGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                PowerToolsGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                PowerToolsGrid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                PowerToolsGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                PowerToolsGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                PowerToolsGrid.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex);
-            }
+            Display_Manager display_manager = new Display_Manager();
+            string category = "PowerTools";
+            display_manager.Refresh(PowerToolsGrid, category);
         }
 
-        /// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //**************************************************************************************************************************************************************************
 
         private void AddNewItemButton_Click(object sender, EventArgs e)
         {
@@ -103,12 +73,13 @@ namespace LabInventory
             {
                 //Load entries into the database
                 Database_Class database_access = new Database_Class();
+
                 database_access.addItem(_items);
                 refresh_dataGridView(); // Refresh the viewed data after you finish adding an item
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //**************************************************************************************************************************************************************************
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -125,17 +96,22 @@ namespace LabInventory
                     database_access.deleteItem(Item_ID);
                     refresh_dataGridView();
                 }
-                else
-                {
-                    MessageBox.Show("Do Nothing");
-                }
             }
-            
         }
+        
+        //*************************************************************************************************************************************************************************
 
-        private void button4_Click(object sender, EventArgs e)
+        //*************************************************************************************************************************************************************************
+
+        private void btnClear_Click(object sender, EventArgs e)
         {
-
+            txtAvailable.Text = "";
+            txtCondition.Text = "";
+            txtDescription.Text = "";
+            txtLocation.Text = "";
+            txtManufacturer.Text = "";
+            txtName.Text = "";
+            txtNumber.Text = "";
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -143,7 +119,9 @@ namespace LabInventory
 
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        //*************************************************************************************************************************************************************************
+
+        private void btnBack_Click(object sender, EventArgs e)
         {
             if (!PowerToolsUserControl.Instance.Controls.ContainsKey("ToolsUserControl"))
             {
@@ -153,6 +131,8 @@ namespace LabInventory
             }
             ToolsUserControl.Instance.Controls["ToolsUserControl"].BringToFront();
         }
+
+        //*************************************************************************************************************************************************************************
 
         private void button10_Click(object sender, EventArgs e)
         {

@@ -15,6 +15,7 @@ namespace LabInventory
 {
     class Database_Class
     {
+        //**********************************************************************************************************************************************************************
 
         public SqlConnection database_connection()
         {
@@ -30,6 +31,8 @@ namespace LabInventory
             }
             return connection;
         }
+
+        //***********************************************************************************************************************************************************************
 
         public void addItem(string [] _items)
         {
@@ -63,6 +66,7 @@ namespace LabInventory
             }
         }
 
+        //*************************************************************************************************************************************************************************
 
         public void deleteItem(int Item_ID)
         {
@@ -82,6 +86,32 @@ namespace LabInventory
             finally
             {
                 cmd.Connection.Close();
+            }
+        }
+
+        //************************************************************************************************************************************************************************
+
+        public void SelectItems(ref DataSet dataset, string category)
+        {
+            SqlConnection connection = database_connection();
+            string query_string = "select * from Inventory where Category='"+ category +"'";
+            SqlCommand cmd = new SqlCommand(query_string, connection);
+
+            SqlDataAdapter adaptor = new SqlDataAdapter(cmd);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                adaptor.Fill(dataset);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid SQL operation: " + ex);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
     }

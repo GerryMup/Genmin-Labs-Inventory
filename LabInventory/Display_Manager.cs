@@ -21,7 +21,7 @@ namespace LabInventory
             return "Confirm Deletion of Item: " + _item_name + ", With the Number: " + _number;
         }
 
-        /// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //**************************************************************************************************************************************************************************
 
         public int get_Item_ID(DataGridView grid)
         {
@@ -29,7 +29,7 @@ namespace LabInventory
             return item_ID;
         }
 
-        /// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //***************************************************************************************************************************************************************************
 
         public string[] Validate_Entries(string[] _items)
         {
@@ -58,6 +58,31 @@ namespace LabInventory
             }
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //*******************************************************************************************************************************************************************************
+
+        public void Refresh(DataGridView grid, string category)
+        {
+            Database_Class database_access = new Database_Class();
+            DataSet dataset = new DataSet();
+
+            database_access.SelectItems(ref dataset, category);
+                
+            //Chosing the data to be displayed in the Grid View on the Screen
+            grid.DataSource = dataset.Tables[0];
+
+            //Making sure that the data grid view uses up all the space avaibale on the screen
+            grid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            grid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grid.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        public void ClearInsertionFields()
+        {
+
+        }
+
     }
 }
