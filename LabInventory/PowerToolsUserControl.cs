@@ -143,17 +143,20 @@ namespace LabInventory
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (PowerToolsGrid.SelectedCells.Count > 0)
             {
                 string _item_name = PowerToolsGrid.CurrentRow.Cells[1].Value.ToString();
                 string _number = PowerToolsGrid.CurrentRow.Cells[5].Value.ToString();
+                int Item_ID = Convert.ToInt32(PowerToolsGrid.CurrentRow.Cells[0].Value.ToString());
                 string _verification_message = LabInventory.Program.main_menu_object.delete_verication_message(_item_name, _number);
 
                 if (MessageBox.Show(_verification_message, "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Go Ahead and Delete the ITEM");
+                    Database_Class database_access = new Database_Class();
+                    database_access.deleteItem(Item_ID);
+                    refresh_dataGridView();
                 }
                 else
                 {

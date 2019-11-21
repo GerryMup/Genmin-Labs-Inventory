@@ -106,6 +106,7 @@
     <Compile Include="CurrentSensorsUserControl.Designer.cs">
       <DependentUpon>CurrentSensorsUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database_Class.cs" />
     <Compile Include="DCMotorsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
