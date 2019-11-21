@@ -36,56 +36,64 @@ namespace LabInventory
 
         public void addItem(string [] _items)
         {
-            SqlConnection connection = database_connection();
-            MessageBox.Show("Now Attempting to Add");
-            string query_string = "insert into Inventory(Name,Description,Manufacturer,Category,Number,Available,Condition,Location) values(@Name,@Description,@Manufacturer,@Category,@Number,@Available,@Condition,@Location)";
-            SqlCommand cmd = new SqlCommand(query_string, connection);
+            string _verification_message = "Confirm that you want to add a new Item";
+            if (MessageBox.Show(_verification_message, "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SqlConnection connection = database_connection();
+                string query_string = "insert into Inventory(Name,Description,Manufacturer,Category,Number,Available,Condition,Location) values(@Name,@Description,@Manufacturer,@Category,@Number,@Available,@Condition,@Location)";
+                SqlCommand cmd = new SqlCommand(query_string, connection);
 
-            //Fecth the contents from the entered text fields
-            cmd.Parameters.AddWithValue("@Name", _items[0]);
-            cmd.Parameters.AddWithValue("@Description", _items[1]);
-            cmd.Parameters.AddWithValue("@Manufacturer", _items[2]);
-            cmd.Parameters.AddWithValue("@Category", _items[3]);
-            cmd.Parameters.AddWithValue("@Number", _items[4]);
-            cmd.Parameters.AddWithValue("@Available", _items[5]);
-            cmd.Parameters.AddWithValue("@Condition", _items[6]);
-            cmd.Parameters.AddWithValue("@Location", _items[7]);
-            try
-            {
-                //Excecute the query
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Invalid SQL Operation: " + ex);
-            }
-            finally
-            {
-                cmd.Connection.Close();
+                //Fecth the contents from the entered text fields
+                cmd.Parameters.AddWithValue("@Name", _items[0]);
+                cmd.Parameters.AddWithValue("@Description", _items[1]);
+                cmd.Parameters.AddWithValue("@Manufacturer", _items[2]);
+                cmd.Parameters.AddWithValue("@Category", _items[3]);
+                cmd.Parameters.AddWithValue("@Number", _items[4]);
+                cmd.Parameters.AddWithValue("@Available", _items[5]);
+                cmd.Parameters.AddWithValue("@Condition", _items[6]);
+                cmd.Parameters.AddWithValue("@Location", _items[7]);
+                try
+                {
+                    //Excecute the query
+                    cmd.Connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Invalid SQL Operation: " + ex);
+                }
+                finally
+                {
+                    cmd.Connection.Close();
+                }
             }
         }
 
         //*************************************************************************************************************************************************************************
 
-        public void deleteItem(int Item_ID)
+        public void deleteItem(int Item_ID, string verification_message)
         {
-            string query_string = "delete from Inventory where Item_ID='"+ Item_ID +"'";
-            SqlConnection _connection = database_connection();
-            SqlCommand cmd = new SqlCommand(query_string, _connection);
-            try
+
+            if (MessageBox.Show(verification_message, "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                //Excecute the query
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Invalid SQL Operation: " + ex.Message);
-            }
-            finally
-            {
-                cmd.Connection.Close();
+
+                string query_string = "delete from Inventory where Item_ID='" + Item_ID + "'";
+                SqlConnection _connection = database_connection();
+                SqlCommand cmd = new SqlCommand(query_string, _connection);
+                try
+                {
+                    //Excecute the query
+                    cmd.Connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Invalid SQL Operation: " + ex.Message);
+                }
+                finally
+                {
+                    cmd.Connection.Close();
+                }
             }
         }
 

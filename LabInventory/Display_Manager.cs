@@ -72,11 +72,14 @@ namespace LabInventory
 
             //Making sure that the data grid view uses up all the space avaibale on the screen
             grid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            grid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            grid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             grid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grid.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grid.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grid.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grid.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         //******************************************************************************************************************************************************************************

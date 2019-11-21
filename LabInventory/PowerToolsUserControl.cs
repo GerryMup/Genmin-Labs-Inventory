@@ -90,12 +90,10 @@ namespace LabInventory
                 string _verification_message = _display_manager.Delete_Verification_Message(PowerToolsGrid);
                 int Item_ID = _display_manager.get_Item_ID(PowerToolsGrid);
 
-                if (MessageBox.Show(_verification_message, "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    Database_Class database_access = new Database_Class();
-                    database_access.deleteItem(Item_ID);
-                    refresh_dataGridView();
-                }
+                Database_Class database_access = new Database_Class();
+                database_access.deleteItem(Item_ID, _verification_message);
+                refresh_dataGridView();
+                
             }
         }
 
@@ -132,6 +130,11 @@ namespace LabInventory
         private void button10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            (PowerToolsGrid.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name = '{0}'", txtSearch.Text);
         }
     }
 }
