@@ -147,8 +147,18 @@ namespace LabInventory
         {
             if (PowerToolsGrid.SelectedCells.Count > 0)
             {
-                string id = PowerToolsGrid.SelectedCells[0].Value.ToString();
-                MessageBox.Show(id);
+                string _item_name = PowerToolsGrid.CurrentRow.Cells[1].Value.ToString();
+                string _number = PowerToolsGrid.CurrentRow.Cells[5].Value.ToString();
+                string _verification_message = LabInventory.Program.main_menu_object.delete_verication_message(_item_name, _number);
+
+                if (MessageBox.Show(_verification_message, "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    MessageBox.Show("Go Ahead and Delete the ITEM");
+                }
+                else
+                {
+                    MessageBox.Show("Do Nothing");
+                }
             }
             
         }
