@@ -90,37 +90,25 @@ namespace LabInventory
             }
         }
 
+        /// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //Adding new power items to the database
         private void AddNewItemButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = LabInventory.Program.main_menu_object.datatbase_connection();
-            //Make sure the user does not try to add items where there are empty fields
-            if ((txtName.Text == "") || (txtDescription.Text == "") || (txtManufacturer.Text == "") ||
-               (txtNumber.Text == "") || (txtCondition.Text == "") ||
-                (txtAvailable.Text == "") || (txtLocation.Text == ""))
-            {
-                MessageBox.Show("Please ensure that there are no empty fields");
-            }
-            else if ((txtAvailable.TextLength > 3))
-            {
-                MessageBox.Show("The value for 'Available' should be either Yes or No!");
-            }
-            else if ((txtAvailable.Text == "Yes") || (txtAvailable.Text == "No"))
-            {
-                string[] _items = { txtName.Text, txtDescription.Text, txtManufacturer.Text, "PowerTools", txtNumber.Text, txtAvailable.Text, txtCondition.Text, txtLocation.Text };
+            Display_Manager _display_manager = new Display_Manager();
 
-                //Fecth the contents from the entered text fields
+            string[] _items = { txtName.Text, txtDescription.Text, txtManufacturer.Text, "PowerTools", txtNumber.Text, txtAvailable.Text, txtCondition.Text, txtLocation.Text };
+            string[] _entries = _display_manager.Validate_Entries(_items);
 
+            if (_entries != null)
+            {
+                //Load entries into the database
                 Database_Class database_access = new Database_Class();
                 database_access.addItem(_items);
                 refresh_dataGridView(); // Refresh the viewed data after you finish adding an item
             }
-            else
-            {
-                MessageBox.Show("The value for 'Available' should be either Yes or No!");
-            }
         }
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         private void btnDelete_Click(object sender, EventArgs e)
         {

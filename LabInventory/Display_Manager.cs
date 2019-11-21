@@ -21,10 +21,43 @@ namespace LabInventory
             return "Confirm Deletion of Item: " + _item_name + ", With the Number: " + _number;
         }
 
+        /// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public int get_Item_ID(DataGridView grid)
         {
             int item_ID = Convert.ToInt32(grid.CurrentRow.Cells[0].Value.ToString());
             return item_ID;
         }
+
+        /// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string[] Validate_Entries(string[] _items)
+        {
+            //Make sure the user does not try to add items where there are empty fields
+            if ((_items[0] == "") || (_items[1] == "") || (_items[2] == "") || (_items[3] == "") || (_items[4] == "") || (_items[5] == "") || (_items[6] == ""))
+            {
+                MessageBox.Show("Please ensure that there are no empty fields");
+                string[] result = null;
+                return result;
+            }
+            else if ((_items[5].Length > 3))
+            {
+                MessageBox.Show("The value for 'Available' should be either Yes or No!");
+                string[] result = null;
+                return result;
+            }
+            else if ((_items[5] == "Yes") || (_items[5] == "No"))
+            {
+                return _items;
+            }
+            else
+            {
+                MessageBox.Show("The value for 'Available' should be either Yes or No!");
+                string[] result = null;
+                return result;
+            }
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 }
