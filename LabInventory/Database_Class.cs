@@ -99,12 +99,22 @@ namespace LabInventory
 
         //************************************************************************************************************************************************************************
 
-        public void SelectItems(ref DataSet dataset, string category)
+        public void SelectItems(ref DataSet dataset, string category, string filter_string)
         {
-            SqlConnection connection = database_connection();
-            string query_string = "select * from Inventory where Category='"+ category +"'";
-            SqlCommand cmd = new SqlCommand(query_string, connection);
+            
+            string query_string;
+            if (filter_string == null)
+            {
+                query_string = "select * from Inventory where Category='" + category + "'";
+            }
+            else
+            {
+                //This query is used when the search box is used to filter ITEMS
+                query_string = "select * from Inventory where Category='" + category + "' and Name LIKE '%" + filter_string + "%'";
+            }
 
+            SqlConnection connection = database_connection();
+            SqlCommand cmd = new SqlCommand(query_string, connection);
             SqlDataAdapter adaptor = new SqlDataAdapter(cmd);
 
             try
@@ -122,5 +132,6 @@ namespace LabInventory
                 connection.Close();
             }
         }
+        //**********************************************************************************************************************************************************
     }
 }

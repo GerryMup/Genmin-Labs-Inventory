@@ -60,12 +60,12 @@ namespace LabInventory
 
         //*******************************************************************************************************************************************************************************
 
-        public void Refresh(DataGridView grid, string category)
+        public void Refresh(DataGridView grid, string category, string filter_string)
         {
             Database_Class database_access = new Database_Class();
             DataSet dataset = new DataSet();
 
-            database_access.SelectItems(ref dataset, category);
+            database_access.SelectItems(ref dataset, category, filter_string);
                 
             //Chosing the data to be displayed in the Grid View on the Screen
             grid.DataSource = dataset.Tables[0];
@@ -99,7 +99,7 @@ namespace LabInventory
 
         public void FilterGridView(DataGridView grid, string _name)
         {
-            (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name = '{0}'", _name);
+            (grid.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name = '%{0}%'", _name);
         }
     }
 }

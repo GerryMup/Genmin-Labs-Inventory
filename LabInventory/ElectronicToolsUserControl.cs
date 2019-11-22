@@ -59,9 +59,10 @@ namespace LabInventory
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string name = txtSearch.Text;
-            Display_Manager _disp_manager = new Display_Manager();
-            _disp_manager.FilterGridView(ElectronicToolsGrid, name);
+            Display_Manager display_manager = new Display_Manager();
+            string category = CATEGORY;
+            string filter_string = txtSearch.Text;
+            display_manager.Refresh(ElectronicToolsGrid, category, filter_string);
         }
 
         //************************************************************************************************************************************************
@@ -69,7 +70,8 @@ namespace LabInventory
         public void refresh_dataGridView()
         {
             Display_Manager display_manager = new Display_Manager();
-            display_manager.Refresh(ElectronicToolsGrid, CATEGORY);
+            string filter_string = null;
+            display_manager.Refresh(ElectronicToolsGrid, CATEGORY,filter_string);
         }
 
         //***********************************************************************************************************************************************
