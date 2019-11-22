@@ -71,7 +71,7 @@ namespace LabInventory
         {
             Display_Manager _display_manager = new Display_Manager();
 
-            string[] _items = { txtName.Text, txtDescription.Text, txtManufacturer.Text, CATEGORY, txtNumber.Text, txtAvailable.Text, txtCondition.Text, txtLocation.Text };
+            string[] _items = { txtName.Text, txtDescription.Text, txtManufacturer.Text, CATEGORY, txtNumber.Text, CB_Available.Text, txtCondition.Text, txtLocation.Text };
             string[] _entries = _display_manager.Validate_Entries(_items);
 
             if (_entries != null)

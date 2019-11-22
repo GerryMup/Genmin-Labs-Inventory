@@ -31,7 +31,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtLocation = new System.Windows.Forms.TextBox();
-            this.txtAvailable = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -52,6 +51,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.CB_Available = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ElectronicToolsGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +73,7 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,16 +97,6 @@
             this.txtLocation.Size = new System.Drawing.Size(156, 27);
             this.txtLocation.TabIndex = 51;
             // 
-            // txtAvailable
-            // 
-            this.txtAvailable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAvailable.Location = new System.Drawing.Point(364, 420);
-            this.txtAvailable.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAvailable.Name = "txtAvailable";
-            this.txtAvailable.Size = new System.Drawing.Size(156, 27);
-            this.txtAvailable.TabIndex = 50;
-            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.Transparent;
@@ -125,7 +115,7 @@
             // 
             // button12
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button12.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,7 +131,7 @@
             // 
             // button11
             // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button11.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,7 +195,7 @@
             // 
             // txtCondition
             // 
-            this.txtCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCondition.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCondition.Location = new System.Drawing.Point(364, 523);
             this.txtCondition.Margin = new System.Windows.Forms.Padding(4);
@@ -215,7 +205,7 @@
             // 
             // txtNumber
             // 
-            this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNumber.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumber.Location = new System.Drawing.Point(364, 470);
             this.txtNumber.Margin = new System.Windows.Forms.Padding(4);
@@ -396,14 +386,26 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // CB_Available
+            // 
+            this.CB_Available.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.CB_Available.FormattingEnabled = true;
+            this.CB_Available.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.CB_Available.Location = new System.Drawing.Point(364, 418);
+            this.CB_Available.Name = "CB_Available";
+            this.CB_Available.Size = new System.Drawing.Size(156, 21);
+            this.CB_Available.TabIndex = 54;
+            // 
             // ElectronicToolsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.CB_Available);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtLocation);
-            this.Controls.Add(this.txtAvailable);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
@@ -438,7 +440,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtLocation;
-        private System.Windows.Forms.TextBox txtAvailable;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
@@ -459,5 +460,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox CB_Available;
     }
 }
