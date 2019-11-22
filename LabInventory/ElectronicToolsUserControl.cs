@@ -114,7 +114,6 @@ namespace LabInventory
                 Database_Class database_access = new Database_Class();
                 database_access.deleteItem(Item_ID, _verification_message);
                 refresh_dataGridView();
-
             }
         }
 
