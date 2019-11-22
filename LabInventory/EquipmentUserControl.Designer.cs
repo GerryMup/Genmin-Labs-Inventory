@@ -41,6 +41,7 @@
             // 
             // button9
             // 
+            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button9.BackColor = System.Drawing.Color.LightBlue;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -54,6 +55,7 @@
             // 
             // btnSinglePhase
             // 
+            this.btnSinglePhase.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSinglePhase.BackColor = System.Drawing.Color.LightBlue;
             this.btnSinglePhase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSinglePhase.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -68,6 +70,7 @@
             // 
             // btnExtinguishers
             // 
+            this.btnExtinguishers.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnExtinguishers.BackColor = System.Drawing.Color.LightBlue;
             this.btnExtinguishers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExtinguishers.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -82,6 +85,7 @@
             // 
             // btnThreePhase
             // 
+            this.btnThreePhase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThreePhase.BackColor = System.Drawing.Color.LightBlue;
             this.btnThreePhase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThreePhase.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,6 +100,7 @@
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.Color.LightBlue;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,6 +114,7 @@
             // 
             // btnGenerators
             // 
+            this.btnGenerators.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnGenerators.BackColor = System.Drawing.Color.LightBlue;
             this.btnGenerators.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerators.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,6 +129,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.BackColor = System.Drawing.Color.LightBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,6 +143,7 @@
             // 
             // btnGasTanks
             // 
+            this.btnGasTanks.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGasTanks.BackColor = System.Drawing.Color.LightBlue;
             this.btnGasTanks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGasTanks.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
