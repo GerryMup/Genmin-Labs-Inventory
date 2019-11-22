@@ -13,6 +13,9 @@ namespace LabInventory
     public partial class SinglePhaseUserControl : UserControl
     {
 
+        const string CATEGORY = "SinglePhase";
+        const string PARENT_USER_CONTROL = "EquipmentUserControl"; 
+
         private static SinglePhaseUserControl _instance;
 
         public static SinglePhaseUserControl Instance
@@ -32,15 +35,101 @@ namespace LabInventory
             InitializeComponent();
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
+        //**************************************************************************************************************
+
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            if (!SinglePhaseUserControl.Instance.Controls.ContainsKey("EquipmentUserControl"))
+            refresh_dataGridView();
+
+            //Manually invoke the clearing event to clear all the search fields.
+            btnClear_Click(sender, e);
+
+            if (!ElectronicToolsUserControl.Instance.Controls.ContainsKey(PARENT_USER_CONTROL))
             {
-                EquipmentUserControl _equipment = new EquipmentUserControl();
-                _equipment.Dock = DockStyle.Fill;
-                EquipmentUserControl.Instance.Controls.Add(_equipment);
+                EquipmentUserControl _tools = new EquipmentUserControl();
+                _tools.Dock = DockStyle.Fill;
+                EquipmentUserControl.Instance.Controls.Add(_tools);
             }
-            EquipmentUserControl.Instance.Controls["EquipmentUserControl"].BringToFront();
+            EquipmentUserControl.Instance.Controls[PARENT_USER_CONTROL].BringToFront();
         }
+
+        //***************************************************************************************************************
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Display_Manager display_manager = new Display_Manager();
+            string category = CATEGORY;
+            string filter_string = txtSearch.Text;
+            display_manager.Refresh(DCMotorsGrid, category, filter_string);
+        }
+
+        //********************************************************************************************************************
+
+        public void refresh_dataGridView()
+        {
+            Display_Manager display_manager = new Display_Manager();
+            string filter_string = null;
+            display_manager.Refresh(DCMotorsGrid, CATEGORY, filter_string);
+        }
+
+        //****************************************************************************************************************************
+
+        private void AddNewButton_Click(object sender, EventArgs e)
+        {
+            Display_Manager _display_manager = new Display_Manager();
+
+            string[] _items = { txtName.Text, txtDescription.Text, txtManufacturer.Text, CATEGORY, txtNumber.Text, txtAvailable.Text, txtCondition.Text, txtLocation.Text };
+            string[] _entries = _display_manager.Validate_Entries(_items);
+
+            if (_entries != null)
+            {
+                //Load entries into the database
+                Database_Class database_access = new Database_Class();
+
+                database_access.addItem(_items);
+                refresh_dataGridView(); // Refresh the viewed data after you finish adding an item
+            }
+        }
+
+        //**********************************************************************************************************************
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            refresh_dataGridView();
+        }
+
+        //*********************************************************************************************************************
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (DCMotorsGrid.SelectedCells.Count > 0)
+            {
+                Display_Manager _display_manager = new Display_Manager();
+
+                string _verification_message = _display_manager.Delete_Verification_Message(DCMotorsGrid);
+                int Item_ID = _display_manager.get_Item_ID(DCMotorsGrid);
+
+                Database_Class database_access = new Database_Class();
+                database_access.deleteItem(Item_ID, _verification_message);
+                refresh_dataGridView();
+            }
+        }
+
+        //********************************************************************************************************************
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Display_Manager _display_manager = new Display_Manager();
+            _display_manager.ClearInsertionFields(this);
+        }
+
+        private void SinglePhaseUserControl_Load(object sender, EventArgs e)
+        {
+            refresh_dataGridView();
+        }
+        //*********************************************************************************************************************
+
+
+
     }
 }

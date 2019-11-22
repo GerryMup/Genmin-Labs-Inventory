@@ -50,8 +50,18 @@ namespace LabInventory
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Display_Manager _display_manager = new Display_Manager();
-            _display_manager.ClearInsertionFields(this);
+            refresh_dataGridView();
+
+            //Manually invoke the clearing event to clear all the search fields.
+            btnClear_Click(sender, e);
+
+            if (!ElectronicToolsUserControl.Instance.Controls.ContainsKey(PARENT_USER_CONTROL))
+            {
+                EquipmentUserControl _tools = new EquipmentUserControl();
+                _tools.Dock = DockStyle.Fill;
+                EquipmentUserControl.Instance.Controls.Add(_tools);
+            }
+            EquipmentUserControl.Instance.Controls[PARENT_USER_CONTROL].BringToFront();
         }
 
         //******************************************************************************************************
