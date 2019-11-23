@@ -54,6 +54,8 @@ namespace LabInventory
             display_manager.Refresh(thisGridView(), CATEGORY, filter_string);
         }
 
+        //*****************************************************************************************************
+
         private void FixedMachinesUserControl_Load(object sender, EventArgs e)
         {
             refresh_dataGridView();

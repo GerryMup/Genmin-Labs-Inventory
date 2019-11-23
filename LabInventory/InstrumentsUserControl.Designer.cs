@@ -37,10 +37,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnThermometers = new System.Windows.Forms.Button();
             this.OscilloscopesButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button9
             // 
+            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button9.BackColor = System.Drawing.Color.LightBlue;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -54,6 +56,7 @@
             // 
             // MultimetersButton
             // 
+            this.MultimetersButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MultimetersButton.BackColor = System.Drawing.Color.LightBlue;
             this.MultimetersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MultimetersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -68,6 +71,7 @@
             // 
             // StroboScopesButton
             // 
+            this.StroboScopesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StroboScopesButton.BackColor = System.Drawing.Color.LightBlue;
             this.StroboScopesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StroboScopesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -82,6 +86,7 @@
             // 
             // ClampMetersButton
             // 
+            this.ClampMetersButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ClampMetersButton.BackColor = System.Drawing.Color.LightBlue;
             this.ClampMetersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClampMetersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,6 +101,7 @@
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.Color.LightBlue;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,6 +115,7 @@
             // 
             // CurrentSensorsButton
             // 
+            this.CurrentSensorsButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CurrentSensorsButton.BackColor = System.Drawing.Color.LightBlue;
             this.CurrentSensorsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CurrentSensorsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,6 +130,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.BackColor = System.Drawing.Color.LightBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,6 +144,7 @@
             // 
             // btnThermometers
             // 
+            this.btnThermometers.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnThermometers.BackColor = System.Drawing.Color.LightBlue;
             this.btnThermometers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThermometers.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,10 +171,23 @@
             this.OscilloscopesButton.UseVisualStyleBackColor = false;
             this.OscilloscopesButton.Click += new System.EventHandler(this.OscilloscopesButton_Click_1);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(418, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 31);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Instruments";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // InstrumentsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.MultimetersButton);
             this.Controls.Add(this.StroboScopesButton);
@@ -180,6 +202,7 @@
             this.Size = new System.Drawing.Size(1000, 569);
             this.Load += new System.EventHandler(this.InstrumentsUserControl_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -194,5 +217,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnThermometers;
         private System.Windows.Forms.Button OscilloscopesButton;
+        private System.Windows.Forms.Label label1;
     }
 }
