@@ -80,6 +80,10 @@ namespace LabInventory
             grid.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grid.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grid.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            //Hide the Item_ID and the Category from the grid view
+            grid.Columns["Item_ID"].Visible = false;
+            grid.Columns["Category"].Visible = false;
         }
 
         //******************************************************************************************************************************************************************************

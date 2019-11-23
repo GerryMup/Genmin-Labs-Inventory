@@ -140,4 +140,4 @@ namespace LabInventory
             _display_manager.ClearInsertionFields(this);
         }
     }
-}
+} 
