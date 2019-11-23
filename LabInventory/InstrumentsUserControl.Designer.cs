@@ -112,6 +112,7 @@
             this.button5.TabIndex = 22;
             this.button5.Text = "Others";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.OtherInstrumentsButton_Click_1);
             // 
             // CurrentSensorsButton
             // 

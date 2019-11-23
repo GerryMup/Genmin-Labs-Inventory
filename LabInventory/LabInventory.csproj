@@ -186,6 +186,18 @@
     <Compile Include="OscilloscopesUserControl.Designer.cs">
       <DependentUpon>OscilloscopesUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="OtherInstruments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherInstruments.Designer.cs">
+      <DependentUpon>OtherInstruments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherTools.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherTools.Designer.cs">
+      <DependentUpon>OtherTools.cs</DependentUpon>
+    </Compile>
     <Compile Include="PowerToolsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -274,6 +286,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OscilloscopesUserControl.resx">
       <DependentUpon>OscilloscopesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherInstruments.resx">
+      <DependentUpon>OtherInstruments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherTools.resx">
+      <DependentUpon>OtherTools.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PowerToolsUserControl.resx">
       <DependentUpon>PowerToolsUserControl.cs</DependentUpon>

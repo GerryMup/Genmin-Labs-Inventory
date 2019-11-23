@@ -27,128 +27,145 @@ namespace LabInventory
             }
         }
 
-
         public InstrumentsUserControl()
         {
             InitializeComponent();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
 
         }
-
         private void InstrumentsUserControl_Load(object sender, EventArgs e)
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
 
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
 
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
 
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void button9_Click(object sender, EventArgs e)
         {
 
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
 
         }
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
         private void OscilloscopesButton_Click_1(object sender, EventArgs e)
         {
-            if (!ToolsUserControl.Instance.Controls.ContainsKey("OscilloscopesUserControl"))
+            string child_user_control = "OscilloscopesUserControl";
+            if (!Instance.Controls.ContainsKey(child_user_control))
             {
                 OscilloscopesUserControl _scopes = new OscilloscopesUserControl();
                 _scopes.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_scopes);
+                Instance.Controls.Add(_scopes);
             }
-            InstrumentsUserControl.Instance.Controls["OscilloscopesUserControl"].BringToFront();
+            Instance.Controls[child_user_control].BringToFront();
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void MultimetersButton_Click_1(object sender, EventArgs e)
         {
-            if (!ToolsUserControl.Instance.Controls.ContainsKey("MultimetersUserControl"))
+            string child_user_control = "MultimetersUserControl";
+
+            if (!Instance.Controls.ContainsKey(child_user_control))
             {
                 MultimetersUserControl _multimeters = new MultimetersUserControl();
                 _multimeters.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_multimeters);
+                Instance.Controls.Add(_multimeters);
             }
-            InstrumentsUserControl.Instance.Controls["MultimetersUserControl"].BringToFront();
+            Instance.Controls[child_user_control].BringToFront();
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void ClampMetersButton_Click_1(object sender, EventArgs e)
         {
-            if (!ToolsUserControl.Instance.Controls.ContainsKey("ClampMetersUserControl"))
+            string child_user_control = "ClampMetersUserControl";
+            if (!Instance.Controls.ContainsKey(child_user_control))
             {
                 ClampMetersUserControl _clamps = new ClampMetersUserControl();
                 _clamps.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_clamps);
+                Instance.Controls.Add(_clamps);
             }
-            InstrumentsUserControl.Instance.Controls["ClampMetersUserControl"].BringToFront();
+            Instance.Controls[child_user_control].BringToFront();
         }
+
+        //**********************************************************************************************************
 
         private void CurrentSensorsButton_Click(object sender, EventArgs e)
         {
-            if (!ToolsUserControl.Instance.Controls.ContainsKey("CurrentSensorsUserControl"))
+            string child_user_control = "CurrentSensorsUserControl";
+            if (!Instance.Controls.ContainsKey(child_user_control))
             {
                 CurrentSensorsUserControl _currentSensors = new CurrentSensorsUserControl();
                 _currentSensors.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_currentSensors);
+                Instance.Controls.Add(_currentSensors);
             }
-            InstrumentsUserControl.Instance.Controls["CurrentSensorsUserControl"].BringToFront();
+            Instance.Controls[child_user_control].BringToFront();
         }
+
+        //**************************************************************************************************************
 
         private void StroboScopesButton_Click(object sender, EventArgs e)
         {
-            if (!ToolsUserControl.Instance.Controls.ContainsKey("StroboScopesUserControl"))
+            string child_user_control = "StroboScopesUserControl";
+            if (!Instance.Controls.ContainsKey(child_user_control))
             {
                 StroboScopesUserControl _strobos = new StroboScopesUserControl();
                 _strobos.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_strobos);
+                Instance.Controls.Add(_strobos);
             }
-            InstrumentsUserControl.Instance.Controls["StroboScopesUserControl"].BringToFront();
+            Instance.Controls[child_user_control].BringToFront();
         }
+
+        //***************************************************************************************************************
 
         private void btnThermometers_Click(object sender, EventArgs e)
         {
-            if (!ToolsUserControl.Instance.Controls.ContainsKey("ThermometersUserControl"))
+            string child_user_control = "ThermometersUserControl";
+            if (!Instance.Controls.ContainsKey(child_user_control))
             {
                 ThermometersUserControl _thermos = new ThermometersUserControl();
                 _thermos.Dock = DockStyle.Fill;
-                InstrumentsUserControl.Instance.Controls.Add(_thermos);
+                Instance.Controls.Add(_thermos);
             }
-            InstrumentsUserControl.Instance.Controls["ThermometersUserControl"].BringToFront();
+            Instance.Controls[child_user_control].BringToFront();
+        }
+
+        //****************************************************************************************************************
+
+        private void OtherInstrumentsButton_Click_1(object sender, EventArgs e)
+        {
+            string child_user_control = "OtherInstruments"; 
+            if (!Instance.Controls.ContainsKey(child_user_control))
+            {
+                OtherInstruments _thermos = new OtherInstruments();
+                _thermos.Dock = DockStyle.Fill;
+                Instance.Controls.Add(_thermos);
+            }
+            Instance.Controls[child_user_control].BringToFront();
         }
     }
 }
