@@ -45,14 +45,14 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.DCMotorsGrid = new System.Windows.Forms.DataGridView();
+            this.SinglePhaseGrid = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
             this.AddNewButton = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.CB_Available = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DCMotorsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SinglePhaseGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // button3
@@ -285,25 +285,25 @@
             this.txtSearch.Size = new System.Drawing.Size(266, 27);
             this.txtSearch.TabIndex = 84;
             // 
-            // DCMotorsGrid
+            // SinglePhaseGrid
             // 
-            this.DCMotorsGrid.AllowUserToAddRows = false;
-            this.DCMotorsGrid.AllowUserToDeleteRows = false;
-            this.DCMotorsGrid.AllowUserToResizeColumns = false;
-            this.DCMotorsGrid.AllowUserToResizeRows = false;
-            this.DCMotorsGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SinglePhaseGrid.AllowUserToAddRows = false;
+            this.SinglePhaseGrid.AllowUserToDeleteRows = false;
+            this.SinglePhaseGrid.AllowUserToResizeColumns = false;
+            this.SinglePhaseGrid.AllowUserToResizeRows = false;
+            this.SinglePhaseGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DCMotorsGrid.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.DCMotorsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DCMotorsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DCMotorsGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DCMotorsGrid.Location = new System.Drawing.Point(50, 108);
-            this.DCMotorsGrid.Margin = new System.Windows.Forms.Padding(4);
-            this.DCMotorsGrid.Name = "DCMotorsGrid";
-            this.DCMotorsGrid.ReadOnly = true;
-            this.DCMotorsGrid.Size = new System.Drawing.Size(901, 244);
-            this.DCMotorsGrid.TabIndex = 83;
+            this.SinglePhaseGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.SinglePhaseGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SinglePhaseGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SinglePhaseGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.SinglePhaseGrid.Location = new System.Drawing.Point(50, 108);
+            this.SinglePhaseGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.SinglePhaseGrid.Name = "SinglePhaseGrid";
+            this.SinglePhaseGrid.ReadOnly = true;
+            this.SinglePhaseGrid.Size = new System.Drawing.Size(901, 244);
+            this.SinglePhaseGrid.TabIndex = 83;
             // 
             // btnClear
             // 
@@ -420,7 +420,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.DCMotorsGrid);
+            this.Controls.Add(this.SinglePhaseGrid);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.btnRefresh);
@@ -429,7 +429,7 @@
             this.Name = "SinglePhaseUserControl";
             this.Size = new System.Drawing.Size(1000, 569);
             this.Load += new System.EventHandler(this.SinglePhaseUserControl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DCMotorsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SinglePhaseGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,7 +454,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView DCMotorsGrid;
+        private System.Windows.Forms.DataGridView SinglePhaseGrid;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button AddNewButton;
         private System.Windows.Forms.Button btnRefresh;
