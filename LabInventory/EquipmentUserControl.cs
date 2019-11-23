@@ -107,5 +107,6 @@ namespace LabInventory
             }
             EquipmentUserControl.Instance.Controls["ExtinguiashersUserControl"].BringToFront();
         }
+
     }
 }
