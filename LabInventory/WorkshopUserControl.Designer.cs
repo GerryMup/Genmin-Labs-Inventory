@@ -37,6 +37,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnFixedMachines = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button9
@@ -158,10 +159,23 @@
             this.btnFixedMachines.UseVisualStyleBackColor = false;
             this.btnFixedMachines.Click += new System.EventHandler(this.btnFixedMachines_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(428, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 31);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Workshop";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // WorkshopUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.btnMobileMachines);
             this.Controls.Add(this.button7);
@@ -174,6 +188,7 @@
             this.Name = "WorkshopUserControl";
             this.Size = new System.Drawing.Size(1000, 569);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -188,5 +203,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnFixedMachines;
+        private System.Windows.Forms.Label label1;
     }
 }
