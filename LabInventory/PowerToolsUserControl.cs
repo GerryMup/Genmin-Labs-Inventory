@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using parentClass = LabInventory.ToolsUserControl;
 
 namespace LabInventory
 {
@@ -41,6 +42,13 @@ namespace LabInventory
             InitializeComponent();
         }
 
+        //********************************************************************************
+
+        private DataGridView dataGridView()
+        {
+            return PowerToolsGrid;
+        }
+
         //******************************************************************************************************************************************
 
         private void PowerToolsUserControl_Load(object sender, EventArgs e)
@@ -62,7 +70,7 @@ namespace LabInventory
             Display_Manager display_manager = new Display_Manager();
             string category = CATEGORY;
             string filter_string = null;
-            display_manager.Refresh(PowerToolsGrid, category, filter_string);
+            display_manager.Refresh(dataGridView(), category, filter_string);
         }
 
         //**************************************************************************************************************************************************************************
@@ -88,12 +96,12 @@ namespace LabInventory
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (PowerToolsGrid.SelectedCells.Count > 0)
+            if (dataGridView().SelectedCells.Count > 0)
             {
                 Display_Manager _display_manager = new Display_Manager();
 
-                string _verification_message = _display_manager.Delete_Verification_Message(PowerToolsGrid);
-                int Item_ID = _display_manager.get_Item_ID(PowerToolsGrid);
+                string _verification_message = _display_manager.Delete_Verification_Message(dataGridView());
+                int Item_ID = _display_manager.get_Item_ID(dataGridView());
 
                 Database_Class database_access = new Database_Class();
                 database_access.deleteItem(Item_ID, _verification_message);
@@ -119,13 +127,13 @@ namespace LabInventory
             //Manually invoke the clearing event to clear all the search fields.
             btnClear_Click(sender, e);
 
-            if (!PowerToolsUserControl.Instance.Controls.ContainsKey(PARENT_USER_CONTROL))
+            if (!Controls.ContainsKey(PARENT_USER_CONTROL))
             {
-                ToolsUserControl _tools = new ToolsUserControl();
+                parentClass _tools = new parentClass();
                 _tools.Dock = DockStyle.Fill;
-                ToolsUserControl.Instance.Controls.Add(_tools);
+                parentClass.Instance.Controls.Add(_tools);
             }
-            ToolsUserControl.Instance.Controls[PARENT_USER_CONTROL].BringToFront();
+            parentClass.Instance.Controls[PARENT_USER_CONTROL].BringToFront();
         }
 
         //*****************************************************************************************************************************************************
@@ -135,7 +143,7 @@ namespace LabInventory
             Display_Manager display_manager = new Display_Manager();
             string category = CATEGORY;
             string filter_string = txtSearch.Text;
-            display_manager.Refresh(PowerToolsGrid, category, filter_string);
+            display_manager.Refresh(dataGridView(), category, filter_string);
         }
     }
 }

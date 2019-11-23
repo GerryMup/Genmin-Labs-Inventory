@@ -58,6 +58,7 @@
             // CB_Available
             // 
             this.CB_Available.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.CB_Available.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Available.FormattingEnabled = true;
             this.CB_Available.Items.AddRange(new object[] {
             "Yes",

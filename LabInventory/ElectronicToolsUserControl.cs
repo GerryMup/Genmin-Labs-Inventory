@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using parentClass = LabInventory.ToolsUserControl;
 
 namespace LabInventory
 {
@@ -37,6 +38,13 @@ namespace LabInventory
             InitializeComponent();
         }
 
+        //**************************************************************************************
+
+        private DataGridView dataGridView()
+        {
+            return ElectronicToolsGrid;
+        }
+
         //************************************************************************************************************************************************
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -46,13 +54,13 @@ namespace LabInventory
             //Manually invoke the clearing event to clear all the search fields.
             btnClear_Click(sender,e);
 
-            if (!ElectronicToolsUserControl.Instance.Controls.ContainsKey(PARENT_USER_CONTROL))
+            if (!Controls.ContainsKey(PARENT_USER_CONTROL))
             {
-                ToolsUserControl _tools = new ToolsUserControl();
-                _tools.Dock = DockStyle.Fill;
-                ToolsUserControl.Instance.Controls.Add(_tools);
+                parentClass obj = new parentClass();
+                obj.Dock = DockStyle.Fill;
+                parentClass.Instance.Controls.Add(obj);
             }
-            ToolsUserControl.Instance.Controls[PARENT_USER_CONTROL].BringToFront();
+            parentClass.Instance.Controls[PARENT_USER_CONTROL].BringToFront();
         }
 
         //**********************************************************************************************************************************************
@@ -62,7 +70,7 @@ namespace LabInventory
             Display_Manager display_manager = new Display_Manager();
             string category = CATEGORY;
             string filter_string = txtSearch.Text;
-            display_manager.Refresh(ElectronicToolsGrid, category, filter_string);
+            display_manager.Refresh(dataGridView(), category, filter_string);
         }
 
         //************************************************************************************************************************************************
@@ -71,7 +79,7 @@ namespace LabInventory
         {
             Display_Manager display_manager = new Display_Manager();
             string filter_string = null;
-            display_manager.Refresh(ElectronicToolsGrid, CATEGORY,filter_string);
+            display_manager.Refresh(dataGridView(), CATEGORY,filter_string);
         }
 
         //***********************************************************************************************************************************************
@@ -107,12 +115,12 @@ namespace LabInventory
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (ElectronicToolsGrid.SelectedCells.Count > 0)
+            if (dataGridView().SelectedCells.Count > 0)
             {
                 Display_Manager _display_manager = new Display_Manager();
 
-                string _verification_message = _display_manager.Delete_Verification_Message(ElectronicToolsGrid);
-                int Item_ID = _display_manager.get_Item_ID(ElectronicToolsGrid);
+                string _verification_message = _display_manager.Delete_Verification_Message(dataGridView());
+                int Item_ID = _display_manager.get_Item_ID(dataGridView());
 
                 Database_Class database_access = new Database_Class();
                 database_access.deleteItem(Item_ID, _verification_message);
