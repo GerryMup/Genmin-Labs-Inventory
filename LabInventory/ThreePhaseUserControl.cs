@@ -34,17 +34,6 @@ namespace LabInventory
             InitializeComponent();
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            if (!ThreePhaseUserControl.Instance.Controls.ContainsKey("EquipmentUserControl"))
-            {
-                EquipmentUserControl _equipment = new EquipmentUserControl();
-                _equipment.Dock = DockStyle.Fill;
-                EquipmentUserControl.Instance.Controls.Add(_equipment);
-            }
-            EquipmentUserControl.Instance.Controls["EquipmentUserControl"].BringToFront();
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             Display_Manager display_manager = new Display_Manager();
