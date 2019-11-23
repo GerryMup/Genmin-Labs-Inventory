@@ -54,5 +54,10 @@ namespace LabInventory
             }
             WorkshopUserControl.Instance.Controls["MobileMachinesUserControl"].BringToFront();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
