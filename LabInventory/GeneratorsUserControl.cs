@@ -84,6 +84,8 @@ namespace LabInventory
             display_manager.Refresh(thisGridView(), category, filter_string);
         }
 
+        //*******************************************************************************************
+
         private void AddNewButton_Click(object sender, EventArgs e)
         {
             Display_Manager _display_manager = new Display_Manager();
@@ -101,10 +103,14 @@ namespace LabInventory
             }
         }
 
+        //*******************************************************************************************
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             refresh_dataGridView();
         }
+
+        //*******************************************************************************************
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -121,11 +127,15 @@ namespace LabInventory
             }
         }
 
+        //*******************************************************************************************
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             Display_Manager _display_manager = new Display_Manager();
             _display_manager.ClearInsertionFields(this);
         }
+
+        //*******************************************************************************************
 
         private void GeneratorsUserControl_Load(object sender, EventArgs e)
         {

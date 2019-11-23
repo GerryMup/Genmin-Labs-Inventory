@@ -285,7 +285,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(407, 44);
             this.button5.TabIndex = 134;
-            this.button5.Text = "Three Phase Motors";
+            this.button5.Text = "Generators";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // txtSearch
