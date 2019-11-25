@@ -19,7 +19,7 @@ namespace LabInventory
             InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        private void login()
         {
             Database_Class database = new Database_Class();
             string password = database.getLogins(UsernameField.Text);
@@ -45,6 +45,19 @@ namespace LabInventory
             {
                 //You may not login. Incorrect Credentials        
                 IncorrectCredentials.Show();
+            }
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+
+        private void PasswordField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                login();
             }
         }
     }

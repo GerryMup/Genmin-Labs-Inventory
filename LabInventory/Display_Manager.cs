@@ -86,6 +86,8 @@ namespace LabInventory
             grid.Columns["Category"].Visible = false;
 
             // Control The Edit Previlleges
+            // Columns 6 and 9 are: Item Availability and Borrower
+            // These columns need to ne editable
             grid.ReadOnly = false;
             grid.Columns[1].ReadOnly = true;
             grid.Columns[2].ReadOnly = true;

@@ -64,6 +64,7 @@
             this.PasswordField.PasswordChar = '*';
             this.PasswordField.Size = new System.Drawing.Size(182, 23);
             this.PasswordField.TabIndex = 3;
+            this.PasswordField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordField_KeyPress);
             // 
             // username
             // 
