@@ -163,9 +163,21 @@ namespace LabInventory
         }
         //**********************************************************************************************************************************************************
 
-        public void editItems(string Borrower, int Item_ID)
+        public void editItems(string Borrower, int Item_ID, string Availabilty)
         {
-
+            Availabilty.ToLower();
+            if ((Availabilty != "yes") || (Availabilty != "no"))
+            {
+                MessageBox.Show("The value for availability must be either 'Yes' or 'No'");
+            }
+            else if ((Availabilty == "no") && (Borrower == ""))
+            {
+                MessageBox.Show("Please specify the name of the person borrowing this item");
+            }
+            else
+            {
+                MessageBox.Show("Now editing");
+            }
         }
 
     }
