@@ -34,7 +34,7 @@ namespace LabInventory
         public string[] Validate_Entries(string[] _items)
         {
             //Make sure the user does not try to add items where there are empty fields
-            _items[5].ToLower();
+            _items[5] = _items[5].ToLower();
             if ((_items[0] == "") || (_items[1] == "") || (_items[2] == "") || (_items[3] == "") || (_items[4] == "") || (_items[5] == "") || (_items[6] == ""))
             {
                 MessageBox.Show("Please ensure that there are no empty fields");

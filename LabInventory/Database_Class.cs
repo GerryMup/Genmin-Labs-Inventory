@@ -163,22 +163,38 @@ namespace LabInventory
         }
         //**********************************************************************************************************************************************************
 
-        public void editItems(string Borrower, int Item_ID, string Availabilty)
+        public void editItems(DataGridView grid)
         {
-            Availabilty.ToLower();
-            if ((Availabilty != "yes") || (Availabilty != "no"))
+            string Borrower = grid.CurrentRow.Cells[9].Value.ToString();
+            int Item_ID = Convert.ToInt32(grid.CurrentRow.Cells[0].Value.ToString());
+            string Available = grid.CurrentRow.Cells[6].Value.ToString();
+
+            Available = Available.ToLower();
+
+            if ((Available == "no") || (Available == "yes"))
             {
-                MessageBox.Show("The value for availability must be either 'Yes' or 'No'");
-            }
-            else if ((Availabilty == "no") && (Borrower == ""))
-            {
-                MessageBox.Show("Please specify the name of the person borrowing this item");
+                if ((Available == "no") && (Borrower == ""))
+                {
+                    MessageBox.Show("Please specify the name of the person borrowing this item!");
+                }
+                else if ((Available == "yes") && (Borrower != ""))
+                {
+                    MessageBox.Show("An available item cannot have a borrower!");
+                }
+                else
+                {
+                    string verification_message = "Are you sure you want to edit this item?";
+                    if (MessageBox.Show(verification_message, "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        //WRITE THE CODE HERE FOR EDITING THE DATABASE
+                        MessageBox.Show("Now Editing");
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Now editing");
+                MessageBox.Show("The value for Available must be either 'Yes' or 'No'");
             }
         }
-
     }
 }

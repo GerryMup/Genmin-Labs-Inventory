@@ -143,6 +143,15 @@ namespace LabInventory
             refresh_dataGridView();
         }
 
+        //**********************************************************************************************************************************************
+        private void ElectronicToolsGrid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Database_Class database = new Database_Class();
+                database.editItems(dataGridView());
+            }
+        }
 
         //***********************************************************************************************************************************************
 

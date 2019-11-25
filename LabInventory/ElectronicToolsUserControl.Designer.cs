@@ -304,6 +304,7 @@
             this.ElectronicToolsGrid.ReadOnly = true;
             this.ElectronicToolsGrid.Size = new System.Drawing.Size(901, 244);
             this.ElectronicToolsGrid.TabIndex = 35;
+            this.ElectronicToolsGrid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ElectronicToolsGrid_KeyPress);
             // 
             // btnClear
             // 
