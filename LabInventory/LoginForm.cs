@@ -27,7 +27,11 @@ namespace LabInventory
             String entered_name = UsernameField.Text;
             String entered_pass = PasswordField.Text;
 
-            if (password.Equals(entered_pass))
+            if ((entered_name == "") || (entered_pass == ""))
+            {
+                IncorrectCredentials.Show();
+            }
+            else if (password.Equals(entered_pass))
             {
                 //You may login
                 //Hide the incorrect credentials message box

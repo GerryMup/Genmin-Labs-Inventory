@@ -38,6 +38,7 @@
             this.PanelToggler = new System.Windows.Forms.Button();
             this.SlidingPanelTimer = new System.Windows.Forms.Timer(this.components);
             this.ContentPanel = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.TogglePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             // 
             this.TogglePanel.BackColor = System.Drawing.Color.LightBlue;
             this.TogglePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TogglePanel.Controls.Add(this.btnLogout);
             this.TogglePanel.Controls.Add(this.WorkshopButton);
             this.TogglePanel.Controls.Add(this.EquipmentButton);
             this.TogglePanel.Controls.Add(this.InstrumentsButton);
@@ -154,6 +156,23 @@
             this.ContentPanel.Size = new System.Drawing.Size(1004, 726);
             this.ContentPanel.TabIndex = 3;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnLogout.Image = global::LabInventory.Properties.Resources.LogOut;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(-1, 610);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(200, 77);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Main_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,5 +204,6 @@
         private System.Windows.Forms.Button ToolsButton;
         private System.Windows.Forms.Timer SlidingPanelTimer;
         private System.Windows.Forms.Panel ContentPanel;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

@@ -54,7 +54,7 @@ namespace LabInventory
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid SQL operation: " + ex);
+                //throw (ex);
             }
             finally
             {

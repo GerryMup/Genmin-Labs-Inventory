@@ -71,13 +71,6 @@ namespace LabInventory
             WindowState = FormWindowState.Minimized;
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            LoginForm _loginForm = new LoginForm();
-            Hide();
-            _loginForm.Show();
-        }
-
         private void MainMenuPanel_Paint(object sender, PaintEventArgs e)
         {
 
@@ -238,9 +231,11 @@ namespace LabInventory
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-
+            LoginForm _loginForm = new LoginForm();
+            Hide();
+            _loginForm.Show();
         }
     }
 }

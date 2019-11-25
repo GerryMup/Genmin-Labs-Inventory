@@ -74,7 +74,6 @@
             this.username.Size = new System.Drawing.Size(79, 17);
             this.username.TabIndex = 4;
             this.username.Text = "User Name";
-            
             // 
             // password
             // 
@@ -97,7 +96,6 @@
             this.Title.Size = new System.Drawing.Size(487, 29);
             this.Title.TabIndex = 6;
             this.Title.Text = "Wits Genmin and High Voltage Lab Inventory";
-           
             // 
             // IncorrectCredentials
             // 
@@ -127,6 +125,7 @@
             this.Controls.Add(this.LoginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lab Inventory";
             this.ResumeLayout(false);
             this.PerformLayout();
