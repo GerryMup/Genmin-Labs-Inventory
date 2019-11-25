@@ -8,4 +8,5 @@
 	Available varchar (3),
 	Condition varchar (50),
 	Location varchar (100),
+	Borrower varchar (100) 
 );

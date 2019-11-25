@@ -19,7 +19,7 @@ namespace LabInventory
 
         public SqlConnection database_connection()
         {
-            string connection_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True";
+            string connection_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\InventoryDB.mdf;Integrated Security=True";
             SqlConnection connection = null;
             try
             {
@@ -34,6 +34,35 @@ namespace LabInventory
 
         //***********************************************************************************************************************************************************************
 
+        public string getLogins(string username)
+        {
+            string query = "select * from Logins where Name='"+ username +"'";
+
+            SqlConnection connection = database_connection();
+            SqlCommand cmd = new SqlCommand(query, connection);
+            SqlDataAdapter adaptor = new SqlDataAdapter(cmd);
+            SqlDataReader reader;
+            string Password = "";
+            int password_index = 2;
+
+            try
+            {
+                cmd.Connection.Open();
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                Password = reader[password_index].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid SQL operation: " + ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Password;
+        }    
+        //***********************************************************************************************************************************************************************
         public void addItem(string [] _items)
         {
             string _verification_message = "Confirm that you want to add a new Item";

@@ -74,7 +74,7 @@
             this.username.Size = new System.Drawing.Size(79, 17);
             this.username.TabIndex = 4;
             this.username.Text = "User Name";
-            this.username.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // password
             // 
@@ -97,7 +97,7 @@
             this.Title.Size = new System.Drawing.Size(487, 29);
             this.Title.TabIndex = 6;
             this.Title.Text = "Wits Genmin and High Voltage Lab Inventory";
-            this.Title.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // IncorrectCredentials
             // 
