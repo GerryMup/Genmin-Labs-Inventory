@@ -84,6 +84,17 @@ namespace LabInventory
             //Hide the Item_ID and the Category from the grid view
             grid.Columns["Item_ID"].Visible = false;
             grid.Columns["Category"].Visible = false;
+
+            // Control The Edit Previlleges
+            grid.ReadOnly = false;
+            grid.Columns[1].ReadOnly = true;
+            grid.Columns[2].ReadOnly = true;
+            grid.Columns[3].ReadOnly = true;
+            grid.Columns[4].ReadOnly = true;
+            grid.Columns[5].ReadOnly = true;
+            grid.Columns[7].ReadOnly = true;
+            grid.Columns[8].ReadOnly = true;
+            grid.EditMode = DataGridViewEditMode.EditOnEnter;
         }
 
         //******************************************************************************************************************************************************************************
