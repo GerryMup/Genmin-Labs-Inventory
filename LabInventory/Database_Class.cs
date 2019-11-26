@@ -187,13 +187,35 @@ namespace LabInventory
                     if (MessageBox.Show(verification_message, "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         //WRITE THE CODE HERE FOR EDITING THE DATABASE
-                        MessageBox.Show("Now Editing");
+                        updateDatabase(Borrower,Item_ID,Available);
                     }
                 }
             }
             else
             {
                 MessageBox.Show("The value for Available must be either 'Yes' or 'No'");
+            }
+        }
+
+        private void updateDatabase(string Borrower, int Item_ID, string Availabe)
+        {
+            string update_query = "UPDATE Inventory SET Available='"+ Availabe +"', Borrower='"+ Borrower +"' WHERE Item_ID='"+ Item_ID +"'";
+            SqlConnection connection = database_connection();
+            SqlCommand cmd = new SqlCommand(update_query, connection);
+            SqlDataAdapter adaptor = new SqlDataAdapter(cmd);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid SQL operation: " + ex);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
     }
