@@ -88,9 +88,6 @@ namespace LabInventory
         {
             Display_Manager _display_manager = new Display_Manager();
 
-            string checker = CB_Available.Text;
-
-            MessageBox.Show(checker);
             string[] _items = { txtName.Text, txtDescription.Text, txtManufacturer.Text, CATEGORY, txtNumber.Text, CB_Available.Text, txtCondition.Text, txtLocation.Text };
             string[] _entries = _display_manager.Validate_Entries(_items);
 
