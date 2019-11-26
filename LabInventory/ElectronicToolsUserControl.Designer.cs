@@ -52,6 +52,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.CB_Available = new System.Windows.Forms.ComboBox();
+            this.btnBorrowed = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ElectronicToolsGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -400,10 +401,27 @@
             this.CB_Available.Size = new System.Drawing.Size(156, 21);
             this.CB_Available.TabIndex = 54;
             // 
+            // btnBorrowed
+            // 
+            this.btnBorrowed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrowed.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrowed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBorrowed.Location = new System.Drawing.Point(766, 69);
+            this.btnBorrowed.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBorrowed.Name = "btnBorrowed";
+            this.btnBorrowed.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnBorrowed.Size = new System.Drawing.Size(185, 34);
+            this.btnBorrowed.TabIndex = 55;
+            this.btnBorrowed.Text = "Add/Remove Borrower";
+            this.btnBorrowed.UseVisualStyleBackColor = false;
+            this.btnBorrowed.Click += new System.EventHandler(this.btnBorrowed_Click);
+            // 
             // ElectronicToolsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnBorrowed);
             this.Controls.Add(this.CB_Available);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -463,5 +481,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox CB_Available;
+        private System.Windows.Forms.Button btnBorrowed;
     }
 }
